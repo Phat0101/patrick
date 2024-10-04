@@ -76,3 +76,22 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes spin-border {
+  0% {
+    border-color: #38bdf8; /* blue-400 */
+  }
+  33% {
+    border-color: #34d399; /* green-400 */
+  }
+  66% {
+    border-color: #a855f7; /* purple-500 */
+  }
+  100% {
+    border-color: #38bdf8; /* blue-400 */
+  }
+}
+
+.animate-spin-border {
+  animation: spin-border 3s linear infinite;
+}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Code, Briefcase, BookOpen, Beaker, BookMarked, Cpu } from 'lucide-react';
 import Image from 'next/image';
-import { Project } from '../app/info';
+import { Project } from '@/lib/info';
 
 interface ProjectsProps {
   projects: Project[];

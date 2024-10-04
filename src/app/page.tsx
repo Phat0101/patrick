@@ -9,8 +9,8 @@ import Skills from '@/components/Skills'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 import Experience from '@/components/Experience'
-import { experiences, projects, skills } from './info';
-
+import Chat from '@/components/Chat'
+import { experiences, projects, skills } from '@/lib/info';
 
 export default function Page() {
   const [scrollY, setScrollY] = useState(0)
@@ -67,6 +67,7 @@ export default function Page() {
         <Contact />
       </main>
       <Footer />
+      <Chat />
     </div>
   )
 }

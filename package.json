@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.65",
+    "@nanostores/react": "github:ai/react",
     "@radix-ui/react-slot": "^1.1.0",
+    "ai": "^3.4.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.9.0",
