@@ -93,5 +93,15 @@ body {
 }
 
 .animate-spin-border {
-  animation: spin-border 3s linear infinite;
+  animation: spin-border 5s linear infinite;
+}
+
+.hover-animate-spin-border {
+  border-color: transparent; /* Ensure initial border color is transparent */
+  transition: border-color 1s ease-in-out;
+}
+
+.hover-animate-spin-border:hover {
+  animation: spin-border 5s linear infinite;
+  animation-delay: 0.5s; /* Delay before the animation starts */
 }

@@ -8,7 +8,7 @@ interface ExperienceProps {
 
 const Experience: React.FC<ExperienceProps> = ({ experiences }) => {
   return (
-    <section id="experience" className="py-20 bg-gradient-to-b from-purple-50 to-indigo-50 dark:from-indigo-900 dark:to-purple-900">
+    <section id="experience" className="py-24 bg-gradient-to-b from-purple-50 to-indigo-50 dark:from-indigo-900 dark:to-purple-900">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Experience</h2>
         <div className="relative">

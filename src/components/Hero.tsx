@@ -1,8 +1,10 @@
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button'; // Adjust the import path
 import { Github, Linkedin, Download } from 'lucide-react'; // Adjust the import path
-import profile from '../app/public/profile.jpg'
+import profile from '../../public/profile.jpg';
+
 interface HeroProps {
   scrollY: number;
 }
@@ -25,27 +27,33 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
               I&apos;m a software engineer passionate about building modern web applications.
             </p>
             <div className="flex justify-center md:justify-start space-x-2 sm:space-x-4">
-              <Button
-                variant="outline"
-                className="px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-base"
-              >
-                <Github className="mr-2 h-4 w-4" />
-                GitHub
-              </Button>
-              <Button
-                variant="outline"
-                className="px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-base"
-              >
-                <Linkedin className="mr-2 h-4 w-4" />
-                LinkedIn
-              </Button>
-              <Button
-                variant="default"
-                className="px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-base"
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </Button>
+              <Link href="https://github.com/Phat0101" target='_blank' >
+                <Button
+                  variant="outline"
+                  className="px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-base"
+                >
+                  <Github className="mr-2 h-4 w-4" />
+                  GitHub
+                </Button>
+              </Link>
+              <Link href="https://www.linkedin.com/in/patrick-nguyen-44766a188/" target='_blank' >
+                <Button
+                  variant="outline"
+                  className="px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-base"
+                >
+                  <Linkedin className="mr-2 h-4 w-4" />
+                  LinkedIn
+                </Button>
+              </Link>
+              <a href="/Patrick_Resume.pdf" download>
+                <Button
+                  variant="default"
+                  className="px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-base"
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV
+                </Button>
+              </a>
             </div>
           </motion.div>
           <motion.div

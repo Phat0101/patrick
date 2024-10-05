@@ -19,6 +19,34 @@ const iconMap: { [key: string]: JSX.Element } = {
 };
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
+  const renderVideo = (video: string, i: number) => {
+    const isYouTube = video.includes('youtube.com') || video.includes('youtu.be');
+    if (isYouTube) {
+      const videoId = video.split('v=')[1] || video.split('/').pop();
+      const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+      return (
+        <iframe
+          key={i}
+          width="100%"
+          height="300"
+          src={embedUrl}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          className="rounded-lg"
+        ></iframe>
+      );
+    } else {
+      return (
+        <video key={i} controls className="w-full rounded-lg">
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      );
+    }
+  };
+
   return (
     <section id="projects" className="py-20 bg-gradient-to-b from-indigo-50 to-blue-50 dark:from-purple-900 dark:to-indigo-900">
       <div className="container mx-auto px-4">
@@ -41,6 +69,18 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                   <p className="text-gray-600 dark:text-gray-300">{project.date}</p>
                 </div>
               </div>
+              {project.images && (
+                <div className="mb-4 flex gap-2 overflow-x-auto">
+                  {project.images.map((img, i) => (
+                    <Image key={i} src={img} alt={`${project.title} image ${i + 1}`} width={300} height={200} className="rounded-lg" />
+                  ))}
+                </div>
+              )}
+              {project.videos && (
+                <div className="mb-4">
+                  {project.videos.map((video, i) => renderVideo(video, i))}
+                </div>
+              )}
               <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 mb-4">
                 {project.description.map((item, i) => (
                   <li key={i}>{item}</li>
@@ -53,27 +93,12 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                   </span>
                 ))}
               </div>
-              {project.images && (
-                <div className="mb-4 flex gap-2 overflow-x-auto">
-                  {project.images.map((img, i) => (
-                    <Image key={i} src={img} alt={`${project.title} image ${i + 1}`} width={300} height={200} className="rounded-lg" />
-                  ))}
-                </div>
-              )}
-              {project.videos && (
-                <div className="mb-4">
-                  {project.videos.map((video, i) => (
-                    <video key={i} controls className="w-full rounded-lg">
-                      <source src={video} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  ))}
-                </div>
-              )}
-              <Button variant="outline" size="sm">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                View Project
-              </Button>
+              <a href={project.link} target='_blank'>
+                <Button variant="outline" size="sm">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  View Project
+                </Button>
+              </a>
             </motion.div>
           ))}
         </div>

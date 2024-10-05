@@ -1,3 +1,14 @@
+import { StaticImageData } from "next/image";
+import gpt_for_health_img_url from "../../public/gpt_for_health.png"
+import gpt_for_health_login_img_url from "../../public/gpt_for_health_login.png"
+import creator_img_url from "../../public/creator.png"
+import cretor_tcs_img_url from "../../public/creator_tcs.jpg"
+import roster_img_url from "../../public/roster.png"
+import zoom_summariser_img_url from "../../public/zoom_summariser.png"
+import pass_img_url from "../../public/pass.png"
+import pass_promo_img_url from "../../public/pass_promo.png"
+import shdrlu_1_img_url from "../../public/shdrlu_1.png"
+import shdrlu_2_img_url from "../../public/shdrlu_2.png"
 // Define types
 export interface Experience {
   title: string;
@@ -6,8 +17,9 @@ export interface Experience {
   description: string[];
   icon: string; // Change icon type to string
   skills: string[];
-  images: string[] | null;
+  images: string[] | StaticImageData[] | null;
   videos: string[] | null;
+  link?: string; // Add link variable
 }
 
 export interface Project {
@@ -16,14 +28,30 @@ export interface Project {
   description: string[];
   icon: string; // Change icon type to string
   skills: string[];
-  images: string[] | null;
+  images: string[] | StaticImageData[] | null;
   videos: string[] | null;
+  link?: string; // Add link variable
 }
 
 export type Skill = string;
 
 // Export variables
 export const experiences: Experience[] = [
+  {
+    title: "Software Engineer, Project Manager",
+    company: "Western Sydney University, School of Medicine - GPT for Health",
+    date: "July 2024 - Present",
+    description: [
+      "Developed a scalable, AI-powered system to simulate realistic family scenarios for medical students.",
+      "Implemented a user-friendly chat interface for students to interact with simulated patients and track their progress.",
+      "Researching students' responses to LLMs and comparing those with real interactions."
+    ],
+    icon: "Beaker", // Use string for icon
+    skills: ["Next.js", "React.js", "TypeScript", "SQlite", "AI", "Project Management"],
+    images: [gpt_for_health_login_img_url, gpt_for_health_img_url],
+    videos: [],
+    // link: "https://example.com/gpt-for-health" // Example link
+  },
   {
     title: "Software Engineer, Mentor",
     company: "Creators Club",
@@ -35,13 +63,13 @@ export const experiences: Experience[] = [
     ],
     icon: "Code", // Use string for icon
     skills: ["Chrome Extension", "AI", "RAG", "Full-stack", "Mentoring"],
-    images: ["/placeholder.svg?height=200&width=200"],
-    videos: null
+    images: [creator_img_url, cretor_tcs_img_url, ],
+    videos: null,
   },
   {
-    title: "Web developer",
-    company: "Western Sydney University - SSTaRs Staff Roster",
-    date: "Feb 2024 - June 2024",
+    title: "Full-stack Developer Intern",
+    company: "Western Sydney University - SSTaRs Staff Roster, Zoom Summariser (dev..)",
+    date: "Feb 2024 - Present",
     description: [
       "Migrated the existing file-based process to an interactive web application that involves shift planning and presentation using React.js, Node.js, and MongoDB.",
       "Dynamically account for staff preferences: sick leaves, shift preferences; public and university holidays, etc.",
@@ -49,10 +77,9 @@ export const experiences: Experience[] = [
     ],
     icon: "Briefcase", // Use string for icon
     skills: ["React.js", "Node.js", "MongoDB", "Web Development"],
-    images: ["/placeholder.svg?height=200&width=300", 
-      // "/placeholder.svg?height=200&width=200"
-    ],
-    videos: null
+    images: [roster_img_url, zoom_summariser_img_url],
+    videos: null,
+    link: "https://class-connect-wrv3-4u2d9i1od-phat0101s-projects.vercel.app/" // Example link
   },
   {
     title: "Maths Facilitator",
@@ -65,26 +92,25 @@ export const experiences: Experience[] = [
     ],
     icon: "BookOpen", // Use string for icon
     skills: ["RStudio", "Python", "Statistics", "Teaching"],
-    images: null,
-    videos: ["/placeholder.mp4"]
-  },
-  {
-    title: "Software Engineer, Project Manager",
-    company: "Western Sydney University, School of Medicine - GPT for Health",
-    date: "July 2023 - Present",
-    description: [
-      "Developed a scalable, AI-powered system using Next.js, React.js, TypeScript and SQlite to simulate realistic family scenarios for medical students.",
-      "Implemented a user-friendly chat interface for students to interact with simulated patients and track their progress.",
-      "Researching students' responses to LLMs and comparing those with real interactions."
-    ],
-    icon: "Beaker", // Use string for icon
-    skills: ["Next.js", "React.js", "TypeScript", "SQlite", "AI", "Project Management"],
-    images: ["/placeholder.svg?height=200&width=300"],
-    videos: ["/placeholder.mp4"]
+    images: [pass_promo_img_url, pass_img_url],
+    videos: [],
   }
 ]
 
 export const projects: Project[] = [
+  {
+    title: "Mini-SHRDLU",
+    date: "Feb 2023 - Jun 2023",
+    description: [
+      "Developed a solver for a simplified version of the SHRDLU board game, which involves moving blocks to achieve specified goals on a grid.",
+      "Utilised C++ for its performance and standard library support for data structures like vectors, priority queues, and unordered sets."
+    ],
+    icon: "Cpu", // Use string for icon
+    skills: ["C++", "Algorithms", "Data Structures"],
+    images: [shdrlu_1_img_url, shdrlu_2_img_url],
+    videos: null,
+    link: "https://github.com/Phat0101/DSA-Project-Mini-SHDRLU"
+  },
   {
     title: "Book Catalog",
     date: "Jan 2021 - May 2021",
@@ -96,20 +122,9 @@ export const projects: Project[] = [
     ],
     icon: "BookMarked", // Use string for icon
     skills: ["NodeJS", "Express", "JWT", "MongoDB", "Bootstrap", "JQuery", "Heroku", "Electron"],
-    images: ["/placeholder.svg?height=200&width=300"],
-    videos: null
-  },
-  {
-    title: "Mini-SHRDLU",
-    date: "Feb 2023 - Jun 2023",
-    description: [
-      "Developed a solver for a simplified version of the SHRDLU board game, which involves moving blocks to achieve specified goals on a grid.",
-      "Utilised C++ for its performance and standard library support for data structures like vectors, priority queues, and unordered sets."
-    ],
-    icon: "Cpu", // Use string for icon
-    skills: ["C++", "Algorithms", "Data Structures"],
-    images: ["/placeholder.svg?height=200&width=300"],
-    videos: ["/placeholder.mp4"]
+    images: [],
+    videos: ["https://youtu.be/xgnlAQizc9U?si=t78PkNsKHJ3ibEG_"],
+    link: "https://youtu.be/xgnlAQizc9U?si=t78PkNsKHJ3ibEG_"
   }
 ]
 
