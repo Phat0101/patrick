@@ -77,6 +77,25 @@ body {
   }
 }
 
+@keyframes animate-text-color {
+  0% {
+    color: #38bdf8; /* blue-400 */
+  }
+  33% {
+    color: #34d399; /* green-400 */
+  }
+  66% {
+    color: #a855f7; /* purple-500 */
+  }
+  100% {
+    color: #38bdf8; /* blue-400 */
+  }
+}
+
+.animate-text-color {
+  animation: animate-text-color 7s ease-in-out infinite;
+}
+
 @keyframes spin-border {
   0% {
     border-color: #38bdf8; /* blue-400 */

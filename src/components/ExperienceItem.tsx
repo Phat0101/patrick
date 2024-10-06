@@ -72,50 +72,53 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, index }) =>
           {experience.date}
         </div>
       </div>
-      <div className="order-1 bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 ml-4 md:ml-0 border-2 border-transparent hover:border-current hover-animate-spin-border">
-        <h3 className="mb-3 font-bold text-gray-800 dark:text-white text-xl">{experience.title}</h3>
-        <h4 className="mb-3 font-semibold text-gray-600 dark:text-gray-300">{experience.company}</h4>
-        <p className="mb-3 text-sm font-medium text-gray-500 dark:text-gray-400 md:hidden">{experience.date}</p>
+      <div className="order-1 bg-white/70 hover:bg-white dark:bg-gray-500/30 dark:hover:bg-gray-200/20 transition rounded-lg shadow-xl w-full md:w-5/12 px-6 py-4 ml-4 md:ml-0 flex flex-col justify-between">
+        <div>
+          <h3 className="mb-3 font-bold text-gray-800 dark:text-white text-xl">{experience.title}</h3>
+          <h4 className="mb-3 font-semibold text-gray-600 dark:text-gray-300">{experience.company}</h4>
+          <p className="mb-3 text-sm font-medium text-gray-500 dark:text-gray-400 md:hidden">{experience.date}</p>
 
-        {experience.images && (
-          <div className="mt-4 flex gap-2 overflow-x-auto">
-            {experience.images.map((img, i) => (
-              <Image key={i} src={img} alt={`${experience.title} image ${i + 1}`} width={150} height={150}
-                style={{
-                  width: "auto",
-                  height: "150px"
-                }}
-                className="rounded-lg" />
+          {experience.images && (
+            <div className="mt-4 flex gap-2 overflow-x-auto">
+              {experience.images.map((img, i) => (
+                <Image key={i} src={img} alt={`${experience.title} image ${i + 1}`} width={150} height={150}
+                  style={{
+                    width: "auto",
+                    height: "150px"
+                  }}
+                  className="rounded-lg" />
+              ))}
+            </div>
+          )}
+          <ul className="list-disc list-inside mt-3 text-sm text-gray-600 dark:text-gray-300">
+            {experience.description.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {experience.skills.map((skill, i) => (
+              <span key={i} className="px-2 py-1 bg-gray-200 dark:bg-gray-500/50 text-gray-700 dark:text-gray-300 text-xs rounded-full">
+                {skill}
+              </span>
             ))}
           </div>
-        )}
-        <ul className="list-disc list-inside mt-3 text-sm text-gray-600 dark:text-gray-300">
-          {experience.description.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {experience.skills.map((skill, i) => (
-            <span key={i} className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full">
-              {skill}
-            </span>
-          ))}
+          {experience.videos && (
+            <div className="mt-4">
+              {experience.videos.map((video, i) => renderVideo(video, i))}
+            </div>
+          )}
         </div>
-        {experience.videos && (
-          <div className="mt-4">
-            {experience.videos.map((video, i) => renderVideo(video, i))}
+        {experience.link && (
+          <div className="flex justify-end mt-4">
+            <a href={experience.link} target='_blank'>
+              <Button variant="outline" size="sm" className='bg-gray-300 hover:bg-gray-200 dark:bg-gray-600/50 border-none dark:hover:bg-gray-400/30'>
+                <ExternalLink className="mr-2 h-4 w-4" />
+                View Project
+              </Button>
+            </a>
           </div>
         )}
-        {experience.link && (
-          <a href={experience.link} target='_blank'>
-            <Button variant="outline" size="sm" className='mt-4'>
-              <ExternalLink className="mr-2 h-4 w-4" />
-              View Project
-            </Button>
-          </a>
-        )}
       </div>
-
     </motion.div>
   );
 };

@@ -22,8 +22,8 @@ const Nav: React.FC<NavProps> = ({ darkMode, toggleDarkMode, activeSection, setA
       <nav className="w-fit sm:w-auto bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90 shadow-lg rounded-full">
         <div className="mx-auto w-fit sm:w-auto px-2 sm:px-6 py-3">
           <div className="flex justify-center sm:justify-between items-center">
-            <Link href="/" className="ml-2 text-xl font-bold text-gray-800 dark:text-white hidden sm:block">Patrick</Link>
-            <ul className="flex space-x-2 md:space-x-6 items-center text-base">
+          <Link href="/" className="ml-2 text-xl font-bold hidden sm:block animate-text-color">Patrick</Link>
+          <ul className="flex space-x-2 md:space-x-6 items-center text-base">
               {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link
