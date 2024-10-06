@@ -63,7 +63,7 @@ export const experiences: Experience[] = [
     ],
     icon: "Code", // Use string for icon
     skills: ["Chrome Extension", "AI", "RAG", "Full-stack", "Mentoring"],
-    images: [creator_img_url, cretor_tcs_img_url, ],
+    images: [creator_img_url, cretor_tcs_img_url,],
     videos: null,
   },
   {
@@ -129,7 +129,7 @@ export const projects: Project[] = [
 ]
 
 export const skills: Skill[] = [
-  "C/C++", "Python", "JavaScript/TypeScript", "Java", "PHP", "SQL", "AWS",
-  "React.js", "Next.js", "Node.js", "Express", "JQuery", "TailwindCSS",
+  "C/C++", "Python", "JavaScript/TypeScript", "Java", "PHP", "SQL",
+  "React.js", "Next.js", "Node.js", "Express.js", "JQuery", "TailwindCSS", "AWS",
   "Team-working", "Communication", "Problem-solving"
 ]

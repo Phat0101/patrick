@@ -21,7 +21,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-full px-4 py-2 text-gray-700 dark:text-gray-300 shadow hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="bg-white dark:bg-gray-800 rounded-lg text-center px-4 py-2 text-gray-700 dark:text-gray-300 shadow hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isIntersecting ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.3, delay: index * 0.1 }}

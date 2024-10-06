@@ -9,9 +9,24 @@ import profile from '../../public/profile.jpg';
 import { motion } from 'framer-motion';
 
 const Chat: React.FC = () => {
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const { messages, input, handleInputChange, handleSubmit: originalHandleSubmit } = useChat();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [showInitialPrompts, setShowInitialPrompts] = useState(true);
+
+  const initialPrompts = [
+    "Tell me about your experience.",
+    "What are your skills?",
+    "Describe your education background."
+  ];
+
+  const handleSubmit = (prompt?: string) => {
+    setShowInitialPrompts(false);
+    if (prompt) {
+      handleInputChange({ target: { value: prompt } } as React.ChangeEvent<HTMLTextAreaElement>);
+    }
+    originalHandleSubmit();
+  };
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -32,6 +47,10 @@ const Chat: React.FC = () => {
     };
   }, [handleSubmit]);
 
+  const handlePromptClick = (prompt: string) => {
+    handleSubmit(prompt);
+  };
+
   return (
     <>
       <motion.div
@@ -44,7 +63,7 @@ const Chat: React.FC = () => {
           className="relative inline-flex items-center justify-center p-0.5 mb-1 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group dark:text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-transparent dark:bg-transparent rounded-md group-hover:bg-white/50 dark:group-hover:bg-slate-900/20">
+          <span className="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md bg-white/40 dark:bg-slate-900/10 group-hover:bg-white/70 dark:group-hover:bg-slate-900/20">
             TLDR, Ask me!
           </span>
           <span className="absolute inset-0 border-2 border-transparent rounded-lg animate-spin-border"></span>
@@ -52,12 +71,25 @@ const Chat: React.FC = () => {
         <p className="flex items-center text-xs text-gray-500 dark:text-gray-300/50">
           Powered by Gemini<SiGooglegemini className="ml-1" />
         </p>
-
       </motion.div>
       <div
-        className={`fixed bottom-[102px] right-6 w-80 h-96 bg-white/95 dark:bg-gray-900/95 shadow-lg rounded-lg flex flex-col transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-x-0 scale-100 opacity-100' : 'transform scale-50 translate-x-full opacity-0 pointer-events-none'}`}
+        className={`fixed bottom-[102px] right-6 w-80 h-96 bg-white/80 dark:bg-gray-900/80 shadow-lg rounded-lg flex flex-col transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-x-0 scale-100 opacity-100' : 'transform scale-50 translate-x-full opacity-0 pointer-events-none'}`}
       >
         <div className='flex flex-col h-5/6 p-2 overflow-auto'>
+          {showInitialPrompts && (
+            <div className="mt-36">
+              <p className="text-sm mb-2 font-semibold text-gray-600 dark:text-gray-300">Some suggestions:</p>
+              {initialPrompts.map((prompt, index) => (
+                <button
+                  key={index}
+                  className="block w-full text-left text-sm p-2 mb-2 bg-gray-200 dark:bg-gray-700 rounded hover:bg-gray-300 dark:hover:bg-gray-600"
+                  onClick={() => handlePromptClick(prompt)}
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
+          )}
           {messages.map((message, index) => (
             <div
               key={index}
@@ -98,7 +130,7 @@ const Chat: React.FC = () => {
             type="button"
             variant={"ghost"}
             className="ml-1 mt-1 px-1 py-1"
-            onClick={handleSubmit}
+            onClick={() => handleSubmit()}
           >
             <Send className=' h-5 w-5' />
           </Button>
