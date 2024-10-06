@@ -79,7 +79,7 @@ export const experiences: Experience[] = [
     skills: ["React.js", "Node.js", "MongoDB", "Web Development"],
     images: [roster_img_url, zoom_summariser_img_url],
     videos: null,
-    link: "https://class-connect-wrv3-4u2d9i1od-phat0101s-projects.vercel.app/" // Example link
+    link: "https://class-connect-wrv3.vercel.app/" // Example link
   },
   {
     title: "Maths Facilitator",
