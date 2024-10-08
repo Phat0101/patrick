@@ -5,6 +5,7 @@ import creator_img_url from "../../public/creator.png"
 import cretor_tcs_img_url from "../../public/creator_tcs.jpg"
 import roster_img_url from "../../public/roster.png"
 import zoom_summariser_img_url from "../../public/zoom_summariser.png"
+import zoom_summariser_result_img_url from "../../public/zoom_summariser_result.png"
 import pass_img_url from "../../public/pass.png"
 import pass_promo_img_url from "../../public/pass_promo.png"
 import shdrlu_1_img_url from "../../public/shdrlu_1.png"
@@ -69,7 +70,7 @@ export const experiences: Experience[] = [
   {
     title: "Full-stack Developer Intern",
     company: "Western Sydney University - SSTaRs Staff Roster, Zoom Summariser (dev..)",
-    date: "Feb 2024 - Present",
+    date: "March 2024 - Present",
     description: [
       "Migrated the existing file-based process to an interactive web application that involves shift planning and presentation using React.js, Node.js, and MongoDB.",
       "Dynamically account for staff preferences: sick leaves, shift preferences; public and university holidays, etc.",
@@ -98,6 +99,20 @@ export const experiences: Experience[] = [
 ]
 
 export const projects: Project[] = [
+  {
+    title: "Zoom Summariser",
+    date: "July 2024 - Present",
+    description: [
+      `Allows users to add, delete, and assign specific timeframes to multiple speakers, ensuring accurate and organised transcript chunking for better summarisation.`,
+      "Automates the summarisation process using LLM with customisable system prompts, saving users time and providing tailored summaries based on specific needs.",
+      "Provides a user-friendly interface for uploading, parsing, and color-coding transcripts, and allows users to download the generated summaries, improving overall efficiency and accessibility.",
+    ],
+    icon: "SiZoom", // Use string for icon
+    skills: ["Next.js", "React.js", "TypeScript", "GenAI", "TailwindCSS"],
+    images: [zoom_summariser_img_url, zoom_summariser_result_img_url],
+    videos: [],
+    link: "https://zoom-summariser.vercel.app/"
+  },
   {
     title: "Mini-SHRDLU",
     date: "Feb 2023 - Jun 2023",

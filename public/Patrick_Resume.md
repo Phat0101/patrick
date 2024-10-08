@@ -41,10 +41,10 @@
 - Developed SkillPies GitHub course and mentoring new members on web-related technologies.
 - Serving as full-stack web developer and team leader for club projects.
 
-### Western Sydney University - SSTaRs Staff Roster  
+### Western Sydney University - SSTaRs Staff Roster - Zoom Summariser
 **Location:** Kingswood, NSW  
 **Role:** Full-stack Developer Intern  
-**Date:** Feb 2024 - June 2024  
+**Date:** March 2024 - Present  
 
 - Migrated file-based process to an interactive web application using React.js, Node.js, and MongoDB.
 - Implemented features to manage staff preferences, sick leaves, and holidays.
@@ -78,6 +78,13 @@
 
 ## Projects
 
+### Zoom Summariser - Web app
+**Date** July 2024 - Present
+
+- Multiple Speaker and Timeframe Management: Allows users to add, delete, and assign specific timeframes to multiple speakers, ensuring accurate and organized transcript chunking for better summarization.
+- Automated and Customizable Summarization: Automates the summarization process using a Large Language Model (LLM) with customizable system prompts, saving users time and providing tailored summaries based on specific needs.
+- Enhanced User Experience with Downloadable Summaries: Provides a user-friendly interface for uploading, parsing, and color-coding transcripts, and allows users to download the generated summaries, improving overall efficiency and accessibility.
+
 ### Book Catalog — Web app  
 **Date:** Jan 2021 - May 2021  
 
@@ -98,8 +105,8 @@
 ## Skills
 
 - **Technical:** C/C++, Python, JavaScript/TypeScript, Java, PHP, SQL, AWS  
-- **Web Frameworks/Libraries:** React.js, Next.js, Node.js, Express, JQuery, TailwindCSS  
-- **Interpersonal:** Team-working, communication, problem-solving  
+- **Web Frameworks/Libraries:** React.js, Next.js, Node.js, Express.js, JQuery, TailwindCSS  
+- **Interpersonal:** Team-working, communication, problem-solving, creative  
 - **Languages:** English, Vietnamese  
 
 ---
@@ -114,6 +121,6 @@
 ---
 
 **Additional Technologies:**  
-LLM, Linux, Ubuntu, XML, ReactJS, AngularJS, VueJS, C#, NextJS, Electron, ReactNative, EC2  
+LLM, Linux, Ubuntu, XML, ReactJS, AngularJS, VueJS, C#, NextJS, Electron, ReactNative, EC2, Lambda  
 **Methodologies:** Agile, Leadership, Sprint  
 **Soft Skills:** Responsibility Analysis, Active Learning, Collaboration

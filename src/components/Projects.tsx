@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Code, Briefcase, BookOpen, Beaker, BookMarked, Cpu } from 'lucide-react';
+import { SiZoom } from "react-icons/si";
 import Image from 'next/image';
 import { Project } from '@/lib/info';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
@@ -16,7 +17,8 @@ const iconMap: { [key: string]: JSX.Element } = {
   BookOpen: <BookOpen className="w-4 h-4 text-white dark:text-black" />,
   Beaker: <Beaker className="w-4 h-4 text-white dark:text-black" />,
   BookMarked: <BookMarked className="w-4 h-4 text-white dark:text-black" />,
-  Cpu: <Cpu className="w-4 h-4 text-white dark:text-black" />
+  Cpu: <Cpu className="w-4 h-4 text-white dark:text-black" />,
+  SiZoom: <SiZoom className="w-4 h-4 text-white dark:text-black" />
 };
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
@@ -31,7 +33,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         <iframe
           key={i}
           width="100%"
-          height="300"
+          height="200"
           src={embedUrl}
           title="YouTube video player"
           frameBorder="0"
@@ -56,18 +58,18 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         ref={ref}
         initial={{ opacity: 0, y: 20 }}
         animate={isIntersecting ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5, delay: 0.1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
       >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
               className="bg-white/70 dark:bg-gray-500/30 rounded-lg shadow-xl p-6 hover:bg-white dark:hover:bg-gray-200/20 transition flex flex-col justify-between"
-              initial={{ opacity: 0, x: -20 }}
-              animate={isIntersecting ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              initial={{ opacity: 0 }}
+              animate={isIntersecting ? { opacity: 1} : {}}
+              transition={{ duration: 1, delay: (index+1) * 0.5 }}
             >
               <div>
                 <div className="flex items-center mb-4">
