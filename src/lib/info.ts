@@ -58,9 +58,9 @@ export const experiences: Experience[] = [
     company: "Creators Club",
     date: "March 2024 - Present",
     description: [
-      "Working on Chrome Extension project in partnership with Tata Consultancy Services to deliver customised AI functionalities using different models and RAG techniques.",
+      "Working on Supercharge AI financial advisor project in partnership with Tata Consultancy Services to deliver customised AI functionalities using different models and RAG techniques.",
       "Developed SkillPies GitHub course, and mentoring new members on web-related technologies.",
-      "Currently serving as forefront full-stack web developer and team leader for club projects."
+      "Currently serving as a full-stack web developer and team leader for club projects."
     ],
     icon: "Code", // Use string for icon
     skills: ["Chrome Extension", "AI", "RAG", "Full-stack", "Mentoring"],
