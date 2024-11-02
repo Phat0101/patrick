@@ -17,7 +17,7 @@ const Nav: React.FC<NavProps> = ({ darkMode, toggleDarkMode, activeSection, setA
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-4 sm:left-8 sm:right-8 md:left-16 md:right-16 z-50"
+      className="fixed top-4 min-[410px]:left-2 min-[410px]:right-2 sm:left-8 sm:right-8 md:left-16 md:right-16 z-50"
     >
       <nav className="w-fit sm:w-auto bg-white dark:bg-gray-800 bg-opacity-90 dark:bg-opacity-90 shadow-lg rounded-3xl">
         <div className="mx-auto w-fit sm:w-auto px-2 sm:px-6 py-3">

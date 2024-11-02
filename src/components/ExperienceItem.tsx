@@ -25,8 +25,8 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, index }) =>
     target: ref,
     offset: ["0 1", "1.2 1"],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
 
   const renderVideo = (video: string, i: number) => {
     const isYouTube = video.includes('youtube.com') || video.includes('youtu.be');

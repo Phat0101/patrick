@@ -1,8 +1,7 @@
 'use client'
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useChat } from 'ai/react';
 import { Send, User } from "lucide-react";
-import { SiGooglegemini } from "react-icons/si";
 import { Button } from './ui/button';
 import Image from 'next/image';
 import profile from '../../public/profile.jpg';
@@ -20,13 +19,13 @@ const Chat: React.FC = () => {
     "Describe your education background."
   ];
 
-  const handleSubmit = (prompt?: string) => {
+  const handleSubmit = useCallback((prompt?: string) => {
     setShowInitialPrompts(false);
     if (prompt) {
       handleInputChange({ target: { value: prompt } } as React.ChangeEvent<HTMLTextAreaElement>);
     }
     originalHandleSubmit();
-  };
+  }, [setShowInitialPrompts, handleInputChange, originalHandleSubmit]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -68,12 +67,9 @@ const Chat: React.FC = () => {
           </span>
           <span className="absolute inset-0 border-2 border-transparent rounded-lg animate-spin-border"></span>
         </button>
-        <p className="flex items-center text-xs text-gray-500 dark:text-gray-300/50">
-          Powered by Gemini<SiGooglegemini className="ml-1" />
-        </p>
       </motion.div>
       <div
-        className={`fixed bottom-[102px] right-6 w-80 h-96 bg-white/80 dark:bg-gray-900/80 shadow-lg rounded-lg flex flex-col transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-x-0 scale-100 opacity-100' : 'transform scale-50 translate-x-full opacity-0 pointer-events-none'}`}
+        className={`fixed bottom-[92px] right-6 w-80 h-96 bg-white/80 dark:bg-gray-900/80 shadow-lg rounded-lg flex flex-col transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-x-0 scale-100 opacity-100' : 'transform scale-50 translate-x-full opacity-0 pointer-events-none'}`}
       >
         <div className='flex flex-col h-5/6 p-2 overflow-auto'>
           {showInitialPrompts && (

@@ -39,7 +39,7 @@ export type Skill = string;
 // Export variables
 export const experiences: Experience[] = [
   {
-    title: "Software Engineer, Project Manager",
+    title: "Software Engineer, Research",
     company: "Western Sydney University, School of Medicine - GPT for Health",
     date: "July 2024 - Present",
     description: [
@@ -50,7 +50,7 @@ export const experiences: Experience[] = [
     icon: "Beaker", // Use string for icon
     skills: ["Next.js", "React.js", "TypeScript", "SQlite", "AI", "Project Management"],
     images: [gpt_for_health_login_img_url, gpt_for_health_img_url],
-    videos: [],
+    videos: ["https://youtu.be/PidQHe4E6XE?si=8mGbW8NimhPrUkUJ"],
     // link: "https://example.com/gpt-for-health" // Example link
   },
   {
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     icon: "SiZoom", // Use string for icon
     skills: ["Next.js", "React.js", "TypeScript", "GenAI", "TailwindCSS"],
     images: [zoom_summariser_img_url, zoom_summariser_result_img_url],
-    videos: [],
+    videos: ["https://youtu.be/hewvlvwLK3s"],
     link: "https://zoom-summariser.vercel.app/"
   },
   {
