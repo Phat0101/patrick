@@ -6,6 +6,7 @@ import { SiZoom } from "react-icons/si";
 import Image from 'next/image';
 import { Project } from '@/lib/info';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import Link from 'next/link';
 
 interface ProjectsProps {
   projects: Project[];
@@ -61,7 +62,15 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         transition={{ duration: 0.5, delay: 0.3 }}
       >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">Projects</h2>
+        <h2 className="text-3xl font-bold text-center mb-4 text-gray-800 dark:text-white">Projects</h2>
+        <div className="text-center mb-10">
+          <Link 
+            href="/projects" 
+            className="text-indigo-600 dark:text-indigo-500 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors"
+          >
+            View Interactive Projects 🐳
+          </Link>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
