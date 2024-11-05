@@ -124,3 +124,8 @@
 LLM, Linux, Ubuntu, XML, ReactJS, AngularJS, VueJS, C#, NextJS, Electron, ReactNative, EC2, Lambda  
 **Methodologies:** Agile, Leadership, Sprint  
 **Soft Skills:** Responsibility Analysis, Active Learning, Collaboration
+
+## Small Projects
+
+### Sudoku Solver 
+Allows users to input a Sudoku puzzle either manually or by uploading an image or taking an image, and the program will solve it.

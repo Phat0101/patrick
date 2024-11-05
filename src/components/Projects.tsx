@@ -68,7 +68,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
             href="/projects" 
             className="text-indigo-600 dark:text-indigo-500 hover:text-indigo-800 dark:hover:text-indigo-300 transition-colors"
           >
-            View Interactive Projects 🐳
+            View Interactive Projects →
           </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

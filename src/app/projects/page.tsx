@@ -127,7 +127,18 @@ const Projects = () => {
             {/* Header Section with Fixed Height */}
             <div className="h-12 mb-8 flex items-center">
               {isOpen ? (
-                <h2 className="text-xl font-bold dark:text-white">Projects</h2>
+                <>
+                  <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center">
+                    <Image
+                      src={profile} // Adjust the path if necessary
+                      alt="Patrick Nguyen"
+                      width={40}
+                      height={40}
+                      className="rounded-full object-cover w-full h-full shadow-lg"
+                    />
+                  </div>
+                  <h2 className="text-xl font-bold dark:text-white ml-4">My Projects</h2>
+                </>
               ) : (
                 <div className="w-full flex justify-center">
                   <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center">
