@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
 import { Upload, Undo2, RotateCcw, Check, Loader2 } from 'lucide-react'
 import { parseImageToSudoku } from "./(Sudoku)/actions"
-import { solveSudoku } from "./(Sudoku)/solve"
+import { solveSudoku, isValid } from "./(Sudoku)/solve"
 import { CameraView } from './(Sudoku)/Camera'
 import { Camera as CameraIcon } from 'lucide-react'
 
@@ -24,6 +24,7 @@ export default function SudokuSolverComponent(): React.ReactElement {
   const [parseStatus, setParseStatus] = useState<'idle' | 'parsing' | 'success' | 'error'>('idle')
   const [showCamera, setShowCamera] = useState(false)
   const [showUpload, setShowUpload] = useState(false)
+  const [validationErrors, setValidationErrors] = useState<Set<string>>(new Set())
   const cameraRef = React.useRef<any>(null)
 
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -87,16 +88,45 @@ export default function SudokuSolverComponent(): React.ReactElement {
     }
   }
 
+  const validateBoard = (newGrid: (number | null)[][]): Set<string> => {
+    const errors = new Set<string>()
+    for (let row = 0; row < 9; row++) {
+      for (let col = 0; col < 9; col++) {
+        const value = newGrid[row][col]
+        if (value !== null) {
+          // Temporarily remove the current value to check if it's valid in its position
+          const tempGrid = newGrid.map(r => r.map(c => c === null ? 0 : c))
+          const currentValue = tempGrid[row][col]
+          tempGrid[row][col] = 0
+          
+          if (!isValid(tempGrid, row, col, currentValue)) {
+            errors.add(`${row}-${col}`)
+          }
+        }
+      }
+    }
+    return errors
+  }
+
   const handleCellChange = (row: number, col: number, value: string) => {
-    const newGrid = grid.map(r => [...r]);
+    const newGrid = grid.map(r => [...r])
     // Only allow single digits
     if (value === '' || /^[1-9]$/.test(value)) {
-      const numValue = value === '' ? null : parseInt(value);
-      newGrid[row][col] = numValue;
-      setGrid(newGrid);
-      setHistory([...history, newGrid]);
+      const numValue = value === '' ? null : parseInt(value)
+      newGrid[row][col] = numValue
+      setGrid(newGrid)
+      setHistory([...history, newGrid])
+      
+      // Validate the new board state
+      const errors = validateBoard(newGrid)
+      setValidationErrors(errors)
+      
+      // Clear general error if board is valid
+      if (errors.size === 0) {
+        setError(null)
+      }
     }
-  };
+  }
 
   const handleUndo = () => {
     if (history.length > 1) {
@@ -266,8 +296,8 @@ export default function SudokuSolverComponent(): React.ReactElement {
                               ? cell === null 
                                 ? 'bg-green-100 text-blue-600'
                                 : 'bg-white text-gray-900'
-                              : cell !== null && !/^[1-9]$/.test(cell.toString())
-                              ? 'bg-red-200'
+                                : validationErrors.has(`${rowIndex}-${colIndex}`)
+                                ? 'bg-red-200'
                               : 'bg-white'
                           }
                           ${(rowIndex + 1) % 3 === 0 && rowIndex < 8 ? 'border-b-[2px] border-b-gray-900' : ''}

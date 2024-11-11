@@ -1,7 +1,7 @@
 /**
  * Checks if a number can be placed in a given position
  */
-function isValid(board: number[][], row: number, col: number, num: number): boolean {
+export function isValid(board: number[][], row: number, col: number, num: number): boolean {
   // Check row
   for (let x = 0; x < 9; x++) {
     if (board[row][x] === num) {
