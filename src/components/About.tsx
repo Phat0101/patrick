@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import AnimatedText from './TextTransition';
-import { BookOpen, Code, TabletSmartphone, GraduationCap } from 'lucide-react';
+import { BookOpen, Code, TabletSmartphone, GraduationCap, Brain } from 'lucide-react';
 
 const About: React.FC = () => {
   const textLines = [
@@ -18,6 +18,11 @@ const About: React.FC = () => {
       icon: <Code className="w-8 h-8" />,
       title: "Full Stack Development",
       description: "Next.js, React.js, TypeScript, and modern web technologies",
+    },
+    {
+      icon: <Brain className="w-8 h-8" />,
+      title: "AI Development",
+      description: "TensorFlow, Langchain, Langgraph, LLMs, and AI-powered Systems",
     },
     {
       icon: <TabletSmartphone className="w-8 h-8" />,
@@ -60,7 +65,7 @@ const About: React.FC = () => {
             ))}
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 max-w-6xl mx-auto px-2 sm:px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6 max-w-7xl mx-auto px-2 sm:px-4">
             {cards.map((card, index) => (
               <motion.div
                 key={index}

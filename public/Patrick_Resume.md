@@ -78,6 +78,16 @@
 
 ## Projects
 
+### Langgraph - Multiple Agents Report Writing to research the stock industry.
+
+- An AI-powered system for conducting comprehensive industry analysis using LangGraph
+
+- This system performs automated industry research and analysis by:
+  - Creating research plans with targeted search queries
+  - Conducting parallel web searches using Tavily API
+  - Analysing industry data, risks, and trends in parallel
+  - Generating comprehensive research reports
+
 ### Zoom Summariser - Web app
 **Date** July 2024 - Present
 
@@ -106,6 +116,8 @@
 
 - **Technical:** C/C++, Python, JavaScript/TypeScript, Java, PHP, SQL, AWS  
 - **Web Frameworks/Libraries:** React.js, Next.js, Node.js, Express.js, JQuery, TailwindCSS  
+- **AI/ML:** TensorFlow, Scikit-learn, OpenAI, Gemini, Langchain, LangGraph, Langsmith
+- **Database:** MongoDB, SQLite, PostgreSQL, Prisma
 - **Interpersonal:** Team-working, communication, problem-solving, creative  
 - **Languages:** English, Vietnamese  
 
@@ -121,7 +133,7 @@
 ---
 
 **Additional Technologies:**  
-LLM, Linux, Ubuntu, XML, ReactJS, AngularJS, VueJS, C#, NextJS, Electron, ReactNative, EC2, Lambda  
+LLM, Linux, Ubuntu, XML, ReactJS, AngularJS, VueJS, C#, NextJS, Electron, ReactNative, EC2, Lambda, RAG, MongoDB  
 **Methodologies:** Agile, Leadership, Sprint  
 **Soft Skills:** Responsibility Analysis, Active Learning, Collaboration
 

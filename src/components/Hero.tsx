@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button'; // Adjust the import path
-import { Github, Linkedin, Download } from 'lucide-react'; // Adjust the import path
+import { Github, Linkedin, Download, Youtube } from 'lucide-react'; // Adjust the import path
 import profile from '../../public/profile.jpg';
 
 interface HeroProps {
@@ -21,10 +21,10 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Hello, I&apos;m Patrick Nguyen
+              Hello, I&apos;m Patrick Nguyen 👋
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-              I&apos;m a software engineer passionate about building modern web applications.
+              I&apos;m a software engineer passionate about building modern web applications and AI-powered systems.
             </p>
             <div className="flex justify-center md:justify-start space-x-2 sm:space-x-4">
               <Link href="https://github.com/Phat0101" target='_blank' >
@@ -43,6 +43,15 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
                 >
                   <Linkedin className="mr-2 h-4 w-4" />
                   LinkedIn
+                </Button>
+              </Link>
+              <Link href="https://www.youtube.com/@patricknguyen-0101" target='_blank' >
+                <Button
+                  variant="outline"
+                  className="px-2 py-1 sm:px-4 sm:py-2 text-sm sm:text-base"
+                >
+                  <Youtube className="mr-2 h-4 w-4" />
+                  YouTube
                 </Button>
               </Link>
               <a href="/Patrick_Resume.pdf" download>

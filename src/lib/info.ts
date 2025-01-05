@@ -63,7 +63,7 @@ export const experiences: Experience[] = [
       "Currently serving as a full-stack web developer and team leader for club projects."
     ],
     icon: "Code", // Use string for icon
-    skills: ["Chrome Extension", "AI", "RAG", "Full-stack", "Mentoring"],
+    skills: ["Chrome Extension", "AI", "Agentic RAG", "Full-stack", "Mentoring"],
     images: [creator_img_url, cretor_tcs_img_url,],
     videos: null,
   },
@@ -144,7 +144,7 @@ export const projects: Project[] = [
 ]
 
 export const skills: Skill[] = [
-  "C/C++", "Python", "JavaScript/TypeScript", "Java", "PHP", "SQL",
-  "React.js", "Next.js", "Node.js", "Express.js", "JQuery", "TailwindCSS", "AWS",
+  "C/C++", "Python", "JavaScript/TypeScript", "Java", "PHP", "SQL", "Langchain/Langgraph", "Docker", "FastAPI",
+  "React.js", "Next.js", "Node.js", "Express.js", "TailwindCSS", "AWS",
   "Team-working", "Communication", "Problem-solving"
 ]
