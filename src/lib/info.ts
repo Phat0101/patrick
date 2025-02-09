@@ -70,7 +70,7 @@ export const experiences: Experience[] = [
   {
     title: "Full-stack Developer Intern",
     company: "Western Sydney University - SSTaRs Staff Roster, Zoom Summariser (dev..)",
-    date: "March 2024 - Present",
+    date: "March 2024 - Nov 2024",
     description: [
       "Migrated the existing file-based process to an interactive web application that involves shift planning and presentation using React.js, Node.js, and MongoDB.",
       "Dynamically account for staff preferences: sick leaves, shift preferences; public and university holidays, etc.",
