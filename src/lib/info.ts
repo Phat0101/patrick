@@ -10,6 +10,7 @@ import pass_img_url from "../../public/pass.png"
 import pass_promo_img_url from "../../public/pass_promo.png"
 import shdrlu_1_img_url from "../../public/shdrlu_1.png"
 import shdrlu_2_img_url from "../../public/shdrlu_2.png"
+import Qrisk_Logo from "../../public/Qrisk_Logo.png"
 // Define types
 export interface Experience {
   title: string;
@@ -39,6 +40,19 @@ export type Skill = string;
 // Export variables
 export const experiences: Experience[] = [
   {
+    title: "Junior Full-stack Developer",
+    company: "Qrisks - CISO, QLD",
+    date: "Feb 2025 - Present",
+    description: [
+      "Maintaining and developing innovative risk quantification solutions using Open FAIR.",
+      "Collaborating with cross-functional teams to deliver high-quality software products that meet client requirements."
+    ],
+    icon: "Shield", // Use string for icon
+    skills: ["FastAPI", "Next.js", "AWS", "CI/CD", "Risk Assessment", "Team Collaboration"],
+    images: [Qrisk_Logo],
+    videos: null,
+  },
+  {
     title: "Software Engineer, Research",
     company: "Western Sydney University, School of Medicine - GPT for Health",
     date: "July 2024 - Present",
@@ -54,11 +68,11 @@ export const experiences: Experience[] = [
     // link: "https://example.com/gpt-for-health" // Example link
   },
   {
-    title: "Software Engineer, Mentor",
+    title: "Software Engineer Intern, Mentor",
     company: "Creators Club",
     date: "March 2024 - Present",
     description: [
-      "Working on Supercharge AI financial advisor project in partnership with Tata Consultancy Services to deliver customised AI functionalities using different models and RAG techniques.",
+      "Working on NaviFi | AI-powered equity research platform in partnership with Tata Consultancy Services to deliver customised AI functionalities using different models and RAG techniques.",
       "Developed SkillPies GitHub course, and mentoring new members on web-related technologies.",
       "Currently serving as a full-stack web developer and team leader for club projects."
     ],

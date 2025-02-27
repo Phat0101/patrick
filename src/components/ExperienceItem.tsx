@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Experience as ExperienceType } from '@/lib/info';
-import { ExternalLink, Briefcase, Code, BookOpen, Beaker, BookMarked, Cpu } from 'lucide-react';
+import { ExternalLink, Briefcase, Code, BookOpen, Beaker, BookMarked, Cpu, Shield } from 'lucide-react';
 import Image from 'next/image';
 
 interface ExperienceItemProps {
@@ -16,7 +16,8 @@ const iconMap: { [key: string]: JSX.Element } = {
   BookOpen: <BookOpen className="w-4 h-4 text-white dark:text-black" />,
   Beaker: <Beaker className="w-4 h-4 text-white dark:text-black" />,
   BookMarked: <BookMarked className="w-4 h-4 text-white dark:text-black" />,
-  Cpu: <Cpu className="w-4 h-4 text-white dark:text-black" />
+  Cpu: <Cpu className="w-4 h-4 text-white dark:text-black" />,
+  Shield: <Shield className="w-4 h-4 text-white dark:text-black" />
 };
 
 const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, index }) => {
