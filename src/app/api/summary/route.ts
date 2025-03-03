@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     const summaries = [];
     for (const { speaker, transcript, background, systemPrompt } of speakerTranscripts) {
       const { text } = await generateText({
-        model: google('gemini-1.5-flash'),
+        model: google('gemini-2.0-flash'),
         system: `You are an expert in summarising transcript. You will summarise zoom transcript in Australian English. Please use formal language.
         This is the extra information about the speaker: Speaker name: ${speaker}
         Background: ${background}

@@ -14,7 +14,7 @@
 **Location:** Parramatta, NSW  
 **GPA:** 6.5/7  
 **Major:** AI, **Minor:** Cloud Computing  
-**Graduation:** Jan 2025  
+**Graduation:** Jan 2025 (Graduated)
 
 **Relevant Coursework:**  
 - Data Structures and Algorithms  

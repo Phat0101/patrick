@@ -158,7 +158,7 @@ export const projects: Project[] = [
 ]
 
 export const skills: Skill[] = [
-  "C/C++", "Python", "JavaScript/TypeScript", "Java", "PHP", "SQL", "Langchain/Langgraph", "Docker", "FastAPI",
+  "C", "C++", "Python", "JavaScript", "TypeScript", "Java", "PHP", "SQL", "Docker", "FastAPI",
   "React.js", "Next.js", "Node.js", "Express.js", "TailwindCSS", "AWS",
-  "Team-working", "Communication", "Problem-solving"
+  "Team-working", "Communication", "Problem-solving", "Langchain", "Langgraph", "OpenAI", "ML", "LLMs", "TensorFlow", "Hugging Face", "GCP", "Serverless", "CI/CD", "Risk Assessment", "Open FAIR"
 ]

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import About from '@/components/About'
-import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
@@ -11,16 +10,22 @@ import Footer from '@/components/Footer'
 import Experience from '@/components/Experience'
 import Chat from '@/components/Chat'
 import { experiences, projects, skills } from '@/lib/info';
+import { Code, User, Briefcase, Wrench, Mail, Home, Terminal } from 'lucide-react';
+import IDETopBar from '@/components/IDETopBar';
+import IDESidebar from '@/components/IDESidebar';
+import IDETabBar from '@/components/IDETabBar';
 
 export default function Page() {
   const [scrollY, setScrollY] = useState(0)
-  const [activeSection, setActiveSection] = useState('')
-  const [darkMode, setDarkMode] = useState(false)
+  const [activeSection, setActiveSection] = useState('home')
+  const [darkMode, setDarkMode] = useState(true)
+  const [activeTab, setActiveTab] = useState('home.tsx')
+  const [showTerminal, setShowTerminal] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY)
-      const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'contact']
+      const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact']
       const currentSection = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
@@ -31,6 +36,7 @@ export default function Page() {
       })
       if (currentSection) {
         setActiveSection(currentSection)
+        setActiveTab(`${currentSection}.tsx`)
       }
     }
     window.addEventListener("scroll", handleScroll)
@@ -38,35 +44,99 @@ export default function Page() {
   }, [])
 
   useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode')
-    setDarkMode(savedMode === 'true')
+    // No need to read from localStorage as we start in dark mode by default for IDE theme
+    document.documentElement.classList.add('dark')
   }, [])
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', darkMode.toString())
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode)
+    if (darkMode) {
+      document.documentElement.classList.remove('dark')
+    } else {
+      document.documentElement.classList.add('dark')
+    }
   }
 
+  const toggleTerminal = () => {
+    setShowTerminal(!showTerminal)
+  }
+
+  const menuItems = [
+    { id: 'home', label: 'Home', icon: <Home size={18} /> },
+    { id: 'about', label: 'About', icon: <User size={18} /> },
+    { id: 'experience', label: 'Experience', icon: <Briefcase size={18} /> },
+    { id: 'projects', label: 'Projects', icon: <Code size={18} /> },
+    { id: 'skills', label: 'Skills', icon: <Wrench size={18} /> },
+    { id: 'contact', label: 'Contact', icon: <Mail size={18} /> },
+  ]
+
   return (
-    <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
-      <Nav darkMode={darkMode} toggleDarkMode={toggleDarkMode} activeSection={activeSection} setActiveSection={setActiveSection} />
-      <main>
-        <Hero scrollY={scrollY} />
-        <About />
-        <Experience experiences={experiences} />
-        <Projects projects={projects} />
-        <Skills skills={skills} />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="flex flex-col h-screen overflow-hidden">
+      {/* IDE Top Bar */}
+      <IDETopBar 
+        darkMode={darkMode} 
+        toggleDarkMode={toggleDarkMode} 
+        toggleTerminal={toggleTerminal}
+      />
+      
+      <div className="flex flex-grow overflow-hidden">
+        {/* IDE Sidebar */}
+        <IDESidebar 
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+          menuItems={menuItems}
+        />
+        
+        <div className="flex flex-col flex-grow overflow-hidden">
+          {/* IDE Tab Bar */}
+          <IDETabBar 
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+            menuItems={menuItems}
+          />
+          
+          {/* Main Content Area (IDE Editor) */}
+          <div className="flex-grow overflow-auto bg-[#1e1e1e] dark:bg-[#1e1e1e] text-gray-200">
+            <div id="home">
+              <Hero scrollY={scrollY} />
+            </div>
+            <div id="about">
+              <About />
+            </div>
+            <div id="experience">
+              <Experience experiences={experiences} />
+            </div>
+            <div id="projects">
+              <Projects projects={projects} />
+            </div>
+            <div id="skills">
+              <Skills skills={skills} />
+            </div>
+            <div id="contact">
+              <Contact />
+            </div>
+            <Footer />
+          </div>
+          
+          {/* Terminal Panel */}
+          {showTerminal && (
+            <div className="h-full bg-[#1e1e1e] border-t border-gray-700 p-4 font-mono text-sm overflow-auto">
+              <div className="flex items-center mb-2">
+                <Terminal size={14} className="mr-2 text-green-400" />
+                <span className="text-green-400">Terminal</span>
+              </div>
+              <p className="text-green-400">$ whoami</p>
+              <p className="mb-2">patrick</p>
+              <p className="text-green-400">$ pwd</p>
+              <p className="mb-2">/users/patrick/portfolio</p>
+              <p className="text-green-400">$ cat skills.txt</p>
+              <p className="mb-2">JavaScript, TypeScript, React, Next.js, Node.js, Python, FastAPI, Langchain, SQL, NoSQL, Git, Docker, AWS</p>
+              <p className="text-green-400">$ _</p>
+            </div>
+          )}
+        </div>
+      </div>
+      
       <Chat />
     </div>
   )

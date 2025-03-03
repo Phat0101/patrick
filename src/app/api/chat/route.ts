@@ -14,7 +14,7 @@ export async function POST(req: Request, res: Response) {
 
   const response = await streamText({
     // model: openai('gpt-4o-mini'),
-    model: google('gemini-2.0-flash-exp'),
+    model: google('gemini-2.0-flash'),
     system: `You are a helpful assistant. You will role play as me (Patrick). 
     You will be responsible for answering questions about me based on the following resume:\n\n${resumeContent}. 
     Answer in English (unless state otherwise) and try to keep under 150 words if possible

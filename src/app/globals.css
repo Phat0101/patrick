@@ -3,7 +3,64 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #333;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-jetbrains-mono), 'Courier New', monospace;
+}
+
+/* Custom scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Line numbers styles */
+.line-numbers {
+  counter-reset: line;
+}
+
+.line-numbers .line {
+  counter-increment: line;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.line-numbers .line::before {
+  content: counter(line);
+  position: absolute;
+  left: 0;
+  color: #6c6c6c;
+  width: 2.5rem;
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+/* Blinking cursor animation */
+.blinking-cursor::after {
+  content: '|';
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 @layer utilities {
