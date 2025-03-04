@@ -38,7 +38,7 @@ const IDETopBar: React.FC<IDETopBarProps> = ({
             <Link href="https://www.linkedin.com/in/patrick-nguyen-44766a188/" target="_blank" className="flex items-center px-4 py-2 hover:bg-[#2d2d2d] text-sm">
               <Linkedin size={14} className="mr-2" /> LinkedIn
             </Link>
-            <Link href="https://www.youtube.com/@PatrickNguyen01" target="_blank" className="flex items-center px-4 py-2 hover:bg-[#2d2d2d] text-sm">
+            <Link href="https://www.youtube.com/@patricknguyen-0101" target="_blank" className="flex items-center px-4 py-2 hover:bg-[#2d2d2d] text-sm">
               <Youtube size={14} className="mr-2" /> YouTube
             </Link>
           </div>
