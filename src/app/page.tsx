@@ -39,8 +39,15 @@ export default function Page() {
         setActiveTab(`${currentSection}.tsx`)
       }
     }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    
+    // Only add the scroll listener for the content container
+    const contentContainer = document.querySelector('.flex-grow.overflow-auto')
+    if (contentContainer) {
+      contentContainer.addEventListener("scroll", handleScroll)
+      return () => contentContainer.removeEventListener("scroll", handleScroll)
+    }
+    
+    return () => {}
   }, [])
 
   useEffect(() => {
@@ -72,12 +79,14 @@ export default function Page() {
 
   return (
     <div className="flex flex-col h-screen overflow-hidden">
-      {/* IDE Top Bar */}
-      <IDETopBar 
-        darkMode={darkMode} 
-        toggleDarkMode={toggleDarkMode} 
-        toggleTerminal={toggleTerminal}
-      />
+      {/* IDE Top Bar - fixed at the top */}
+      <div className="sticky top-0 z-50">
+        <IDETopBar 
+          darkMode={darkMode} 
+          toggleDarkMode={toggleDarkMode} 
+          toggleTerminal={toggleTerminal}
+        />
+      </div>
       
       <div className="flex flex-grow overflow-hidden">
         {/* IDE Sidebar */}
@@ -88,12 +97,14 @@ export default function Page() {
         />
         
         <div className="flex flex-col flex-grow overflow-hidden">
-          {/* IDE Tab Bar */}
-          <IDETabBar 
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-            menuItems={menuItems}
-          />
+          {/* IDE Tab Bar - should stay at the top of content */}
+          <div className="sticky z-40">
+            <IDETabBar 
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+              menuItems={menuItems}
+            />
+          </div>
           
           {/* Main Content Area (IDE Editor) */}
           <div className="flex-grow overflow-auto bg-[#1e1e1e] dark:bg-[#1e1e1e] text-gray-200">
@@ -120,7 +131,7 @@ export default function Page() {
           
           {/* Terminal Panel */}
           {showTerminal && (
-            <div className="h-full bg-[#1e1e1e] border-t border-gray-700 p-4 font-mono text-sm overflow-auto">
+            <div className="h-64 bg-[#1e1e1e] border-t border-gray-700 p-4 font-mono text-sm overflow-auto">
               <div className="flex items-center mb-2">
                 <Terminal size={14} className="mr-2 text-green-400" />
                 <span className="text-green-400">Terminal</span>

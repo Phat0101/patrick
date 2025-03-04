@@ -31,6 +31,16 @@ code, pre, .font-mono {
   background: #777;
 }
 
+/* Hide scrollbar but maintain functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
 /* Line numbers styles */
 .line-numbers {
   counter-reset: line;
