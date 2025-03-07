@@ -1,38 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import AnimatedText from './TextTransition';
-import { BookOpen, Code, TabletSmartphone, GraduationCap, Brain, FileCode } from 'lucide-react';
+import { Code, GraduationCap, Brain, FileCode, Server, Briefcase } from 'lucide-react';
 
 const About: React.FC = () => {
   const textLines = [
-    "I'm a Computer Science student at Western Sydney University, majoring in AI with a minor in Cloud Computing. I'm passionate about developing innovative solutions and have experience in various programming languages and web technologies. My goal is to leverage my skills in software engineering and AI to create impactful applications that solve real-world problems."
+    "I'm a Full-Stack Developer with a Bachelor's degree in Computer Science (Advanced) from Western Sydney University, majoring in AI with a minor in Cloud Computing. With professional experience across various domains including fintech, healthcare and risk management, I specialise in building robust, scalable applications using modern web technologies. My goal is to leverage my expertise in both frontend and backend development along with AI to create innovative solutions that address complex real-world challenges."
   ];
 
   const cards = [
     {
+      icon: <Briefcase className="w-6 h-6" />,
+      title: "Professional",
+      description: "Full-Stack Developer with experience in fintech, healthcare, and risk management",
+    },
+    {
       icon: <GraduationCap className="w-6 h-6" />,
       title: "Education",
-      description: "Bachelor Computer Science (Advanced) at Western Sydney University - 6.5/7",
+      description: "Bachelor Computer Science (Advanced) at Western Sydney University - 6.5/7 GPA",
     },
     {
       icon: <Code className="w-6 h-6" />,
-      title: "Full Stack Development",
-      description: "Next.js, React.js, TypeScript, and modern web technologies",
+      title: "Frontend",
+      description: "React, Next.js, TypeScript, TailwindCSS, and modern UI frameworks",
+    },
+    {
+      icon: <Server className="w-6 h-6" />,
+      title: "Backend",
+      description: "Node.js, Python, FastAPI, SQL/NoSQL databases, REST/GraphQL APIs",
     },
     {
       icon: <Brain className="w-6 h-6" />,
-      title: "AI Development",
-      description: "TensorFlow, Langchain, Langgraph, LLMs, and AI-powered Systems",
-    },
-    {
-      icon: <TabletSmartphone className="w-6 h-6" />,
-      title: "Mobile Development",
-      description: "React Native, iOS/Android Integration, and Cross-platform Solutions",
-    },
-    {
-      icon: <BookOpen className="w-6 h-6" />,
-      title: "Interests",
-      description: "AWS, GCP, System Architectures, Machine Learning, and AI Development",
+      title: "AI & Cloud",
+      description: "TensorFlow, Langchain, LLMs, AWS, Docker, and CI/CD pipelines",
     },
   ];
 

@@ -75,12 +75,19 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, index }) =>
           {experience.images && (
             <div className="mt-3 flex gap-2 overflow-x-auto pb-2">
               {experience.images.map((img, i) => (
-                <Image key={i} src={img} alt={`${experience.title} image ${i + 1}`} width={120} height={120}
-                  style={{
-                    width: "auto",
-                    height: "120px"
-                  }}
-                  className="rounded-md border border-gray-700" />
+                <div key={i} className="relative min-w-[160px] min-h-[120px] rounded-md border border-gray-700 overflow-hidden">
+                  <Image 
+                    src={img} 
+                    alt={`${experience.title} image ${i + 1}`} 
+                    quality={100}
+                    style={{
+                      objectFit: "fill",
+                      width: "100%",
+                      height: "120px"
+                    }}
+                    className="rounded-md bg-white" 
+                  />
+                </div>
               ))}
             </div>
           )}

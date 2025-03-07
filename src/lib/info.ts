@@ -69,7 +69,7 @@ export const experiences: Experience[] = [
   },
   {
     title: "Software Engineer Intern, Mentor",
-    company: "Creators Club",
+    company: "Tata Consultancy Services x Creators Club",
     date: "March 2024 - Present",
     description: [
       "Working on NaviFi | AI-powered equity research platform in partnership with Tata Consultancy Services to deliver customised AI functionalities using different models and RAG techniques.",
