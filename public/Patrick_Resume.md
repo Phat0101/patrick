@@ -23,6 +23,7 @@
 - Artificial Intelligence  
 - Machine Learning and Data Science  
 - Cyber and Information Security  
+- Robotics Programming
 
 **Awards:**  
 - Dean’s Merit List 2022, 2023  
@@ -44,7 +45,7 @@
 ### Western Sydney University - SSTaRs Staff Roster - Zoom Summariser
 **Location:** Kingswood, NSW  
 **Role:** Full-stack Developer Intern  
-**Date:** March 2024 - Present  
+**Date:** March 2024 - November 2024
 
 - Migrated file-based process to an interactive web application using React.js, Node.js, and MongoDB.
 - Implemented features to manage staff preferences, sick leaves, and holidays.
