@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
@@ -30,7 +31,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-4 font-mono bg-[#1e1e1e] text-gray-200">
+    <section id="contact" className="py-16 px-4 font-mono bg-white dark:bg-[#1e1e1e] text-gray-800 dark:text-gray-200">
       <motion.section
         ref={ref}
         initial={{ opacity: 0, y: 20 }}
@@ -39,12 +40,12 @@ const Contact: React.FC = () => {
       >
       <div className="container mx-auto">
         {/* File header like a code comment */}
-        <div className="mb-8 max-w-4xl mx-auto text-left bg-[#2d2d2d] p-4 rounded-md border-l-4 border-blue-500 overflow-x-auto">
+        <div className="mb-8 max-w-4xl mx-auto text-left bg-gray-100 dark:bg-[#2d2d2d] p-4 rounded-md border-l-4 border-blue-500 overflow-x-auto">
           <div className="flex items-center mb-2">
-            <FileCode className="w-5 h-5 mr-2 text-blue-400" />
-            <span className="text-lg font-semibold text-blue-400">Contact.tsx</span>
+            <FileCode className="w-5 h-5 mr-2 text-blue-600 dark:text-blue-400" />
+            <span className="text-lg font-semibold text-blue-600 dark:text-blue-400">Contact.tsx</span>
           </div>
-          <pre className="text-blue-400">
+          <pre className="text-blue-600 dark:text-blue-400">
             <code>{`/**
  * Component: Contact
  * Description: Get in touch form
@@ -55,51 +56,51 @@ const Contact: React.FC = () => {
         
         <div className="max-w-4xl mx-auto mb-8 text-left">
           <div className="flex items-center mb-4">
-            <Mail className="w-5 h-5 mr-2 text-purple-400" />
-            <span className="text-xl font-semibold text-purple-400">Get In Touch</span>
+            <Mail className="w-5 h-5 mr-2 text-purple-600 dark:text-purple-400" />
+            <span className="text-xl font-semibold text-purple-600 dark:text-purple-400">Get In Touch</span>
           </div>
           
           <div className="pl-4 mb-6">
             <div className="mb-2">
-              <span className="text-purple-400">async function </span>
-              <span className="text-yellow-400">sendMessage</span>
-              <span className="text-gray-300">() {`{`}</span>
+              <span className="text-purple-600 dark:text-purple-400">async function </span>
+              <span className="text-yellow-600 dark:text-yellow-400">sendMessage</span>
+              <span className="text-gray-700 dark:text-gray-300">() {`{`}</span>
             </div>
             <div className="pl-4">
-              <span className="text-green-400 text-sm">{`// You can reach me at Patrick.Nguyen01@outlook.com`}</span>
+              <span className="text-green-600 dark:text-green-400 text-sm">{`// You can reach me at Patrick.Nguyen01@outlook.com`}</span>
             </div>
           </div>
         </div>
         {/* Form styled like a code editor panel */}
-        <div className="max-w-xl mx-auto bg-[#2d2d2d] rounded-md border border-gray-700 shadow-lg overflow-hidden">
+        <div className="max-w-xl mx-auto bg-gray-100 dark:bg-[#2d2d2d] rounded-md border border-gray-300 dark:border-gray-700 shadow-lg overflow-hidden">
           {/* Panel header */}
-          <div className="bg-[#333333] px-4 py-2 flex items-center">
-            <Terminal className="w-4 h-4 mr-2 text-blue-400" />
-            <div className="text-sm text-gray-300">message.send()</div>
+          <div className="bg-gray-200 dark:bg-[#333333] px-4 py-2 flex items-center">
+            <Terminal className="w-4 h-4 mr-2 text-blue-600 dark:text-blue-400" />
+            <div className="text-sm text-gray-700 dark:text-gray-300">message.send()</div>
           </div>
           
           {/* Form body */}
           <div className="p-6">
             <form onSubmit={handleSubmit} className="space-y-4 line-numbers">
               <div className="line">
-                <label htmlFor="email" className="block text-sm text-gray-400 mb-1">{`// Your email address`}</label>
+                <label htmlFor="email" className="block text-sm text-gray-600 dark:text-gray-400 mb-1">{`// Your email address`}</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   placeholder="email@example.com"
-                  className="w-full px-3 py-2 bg-[#1e1e1e] border border-gray-700 rounded-md text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 bg-white dark:bg-[#1e1e1e] border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                   required
                 />
               </div>
               <div className="line">
-                <label htmlFor="message" className="block text-sm text-gray-400 mb-1">{`// Your message`}</label>
+                <label htmlFor="message" className="block text-sm text-gray-600 dark:text-gray-400 mb-1">{`// Your message`}</label>
                 <textarea
                   id="message"
                   name="message"
                   rows={4}
                   placeholder="Type your message here..."
-                  className="w-full px-3 py-2 bg-[#1e1e1e] border border-gray-700 rounded-md text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 font-mono"
+                  className="w-full px-3 py-2 bg-white dark:bg-[#1e1e1e] border border-gray-300 dark:border-gray-700 rounded-md text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 font-mono"
                   required
                 ></textarea>
               </div>
@@ -114,8 +115,8 @@ const Contact: React.FC = () => {
               </div>
             </form>
             {status && (
-              <div className={`mt-4 ${status.type === 'success' ? 'text-green-400' : 'text-red-400'} border border-gray-700 p-2 bg-[#1e1e1e] rounded-md`}>
-                <span className="text-gray-400">{`// `}</span>
+              <div className={`mt-4 ${status.type === 'success' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'} border border-gray-300 dark:border-gray-700 p-2 bg-white dark:bg-[#1e1e1e] rounded-md`}>
+                <span className="text-gray-600 dark:text-gray-400">{`// `}</span>
                 {status.message}
               </div>
             )}
@@ -125,7 +126,7 @@ const Contact: React.FC = () => {
         {/* Close the function */}
         <div className="max-w-4xl mx-auto mt-8 text-left">
           <div className="pl-4">
-            <span className="text-gray-300">{`}`}</span>
+            <span className="text-gray-700 dark:text-gray-300">{`}`}</span>
           </div>
         </div>
       </div>

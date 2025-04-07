@@ -13,7 +13,7 @@ import { solveSudoku, isValid } from "./(Sudoku)/solve"
 import { CameraView } from './(Sudoku)/Camera'
 import { Camera as CameraIcon } from 'lucide-react'
 
-export default function SudokuSolverComponent(): React.ReactElement {
+export default function SudokuSolverComponent(): React.ReactElement<any> {
   const [image, setImage] = useState<string | null>(null)
   const [grid, setGrid] = useState<(number | null)[][]>(Array(9).fill(null).map(() => Array(9).fill(null)))
   const [solvedGrid, setSolvedGrid] = useState<number[][]>([])

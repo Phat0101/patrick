@@ -8,6 +8,9 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
+  compiler: {
+    styledComponents: true,
+  },
 };
 
 export default nextConfig;

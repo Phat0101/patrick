@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -25,9 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className={`antialiased min-h-screen overflow-hidden bg-[#1e1e1e] text-gray-100`}>
-        {children}
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+      <body className="antialiased min-h-screen overflow-hidden bg-white text-gray-900 dark:bg-[#1e1e1e] dark:text-gray-100">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

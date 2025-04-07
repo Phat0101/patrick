@@ -59,7 +59,7 @@ const Chat: React.FC = () => {
         className="fixed bottom-8 right-4"
       >
         <button
-          className="relative inline-flex items-center justify-center p-0.5 mb-1 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group dark:text-white"
+          className="relative inline-flex items-center justify-center p-0.5 mb-1 me-2 overflow-hidden text-sm font-medium text-gray-900 dark:text-white rounded-lg group"
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md bg-white/40 dark:bg-slate-900/10 group-hover:bg-white/70 dark:group-hover:bg-slate-900/20">
@@ -89,13 +89,12 @@ const Chat: React.FC = () => {
           {messages.map((message, index) => (
             <div
               key={index}
-              className={`max-w-[75%] mb-2 p-2 border rounded ${message.role === 'user' ? ' self-end text-right' : 'self-start text-left'
-                }`}
+              className={`max-w-[75%] mb-2 p-2 border border-gray-300 dark:border-gray-700 rounded ${message.role === 'user' ? 'self-end text-right bg-blue-50 dark:bg-blue-900/30' : 'self-start text-left bg-gray-50 dark:bg-gray-800/50'}`}
             >
               <div className={`flex items-center ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 {message.role === 'user' ? (
-                  <div className='text-xl ml-2 '>
-                    <User className='w-4 h-4' />
+                  <div className='text-xl ml-2'>
+                    <User className='w-4 h-4 text-blue-600 dark:text-blue-400' />
                   </div>
                 ) : (
                   <div className='text-xl'>
@@ -103,14 +102,14 @@ const Chat: React.FC = () => {
                   </div>
                 )}
               </div>
-              <div className='text-sm'>{message.content}</div>
+              <div className='text-sm text-gray-800 dark:text-gray-200'>{message.content}</div>
             </div>
           ))}
         </div>
         <form onSubmit={(e) => e.preventDefault()} className="p-2 flex border-t border-gray-300 dark:border-gray-700">
           <textarea
             ref={textareaRef}
-            className="flex-grow p-2 text-sm rounded mt-1 text-black dark:text-white resize-none overflow-hidden bg-white dark:bg-gray-800 focus:outline-none"
+            className="flex-grow p-2 text-sm rounded mt-1 text-gray-800 dark:text-gray-200 resize-none overflow-hidden bg-white dark:bg-gray-800 focus:outline-none border border-gray-300 dark:border-gray-700"
             value={input}
             placeholder="Ask me... (Ctrl/Cmd + Enter)"
             onChange={handleInputChange}
@@ -125,10 +124,10 @@ const Chat: React.FC = () => {
           <Button
             type="button"
             variant={"ghost"}
-            className="ml-1 mt-1 px-1 py-1"
+            className="ml-1 mt-1 px-1 py-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
             onClick={() => handleSubmit()}
           >
-            <Send className=' h-5 w-5' />
+            <Send className='h-5 w-5' />
           </Button>
         </form>
       </div>

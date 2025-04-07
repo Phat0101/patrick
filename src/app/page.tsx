@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useTheme } from 'next-themes'
 import About from '@/components/About'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
@@ -18,7 +19,7 @@ import IDETabBar from '@/components/IDETabBar';
 export default function Page() {
   const [scrollY, setScrollY] = useState(0)
   const [activeSection, setActiveSection] = useState('home')
-  const [darkMode, setDarkMode] = useState(true)
+  const { theme, setTheme } = useTheme()
   const [activeTab, setActiveTab] = useState('home.tsx')
   const [showTerminal, setShowTerminal] = useState(false)
 
@@ -39,29 +40,19 @@ export default function Page() {
         setActiveTab(`${currentSection}.tsx`)
       }
     }
-    
+
     // Only add the scroll listener for the content container
     const contentContainer = document.querySelector('.flex-grow.overflow-auto')
     if (contentContainer) {
       contentContainer.addEventListener("scroll", handleScroll)
       return () => contentContainer.removeEventListener("scroll", handleScroll)
     }
-    
-    return () => {}
+
+    return () => { }
   }, [])
 
-  useEffect(() => {
-    // No need to read from localStorage as we start in dark mode by default for IDE theme
-    document.documentElement.classList.add('dark')
-  }, [])
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-    if (darkMode) {
-      document.documentElement.classList.remove('dark')
-    } else {
-      document.documentElement.classList.add('dark')
-    }
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
   const toggleTerminal = () => {
@@ -81,33 +72,32 @@ export default function Page() {
     <div className="flex flex-col h-screen overflow-hidden">
       {/* IDE Top Bar - fixed at the top */}
       <div className="sticky top-0 z-50">
-        <IDETopBar 
-          darkMode={darkMode} 
-          toggleDarkMode={toggleDarkMode} 
+        <IDETopBar
+          toggleDarkMode={toggleTheme}
           toggleTerminal={toggleTerminal}
         />
       </div>
-      
+
       <div className="flex flex-grow overflow-hidden">
         {/* IDE Sidebar */}
-        <IDESidebar 
+        <IDESidebar
           activeSection={activeSection}
           setActiveSection={setActiveSection}
           menuItems={menuItems}
         />
-        
+
         <div className="flex flex-col flex-grow overflow-hidden">
           {/* IDE Tab Bar - should stay at the top of content */}
           <div className="sticky z-40">
-            <IDETabBar 
+            <IDETabBar
               activeTab={activeTab}
               setActiveTab={setActiveTab}
               menuItems={menuItems}
             />
           </div>
-          
+
           {/* Main Content Area (IDE Editor) */}
-          <div className="flex-grow overflow-auto bg-[#1e1e1e] dark:bg-[#1e1e1e] text-gray-200">
+          <div className="flex-grow overflow-auto bg-white dark:bg-[#1e1e1e] text-gray-900 dark:text-gray-200">
             <div id="home">
               <Hero scrollY={scrollY} />
             </div>
@@ -128,26 +118,26 @@ export default function Page() {
             </div>
             <Footer />
           </div>
-          
+
           {/* Terminal Panel */}
           {showTerminal && (
-            <div className="h-64 bg-[#1e1e1e] border-t border-gray-700 p-4 font-mono text-sm overflow-auto">
+            <div className="h-[100vh] bg-gray-100 dark:bg-[#1e1e1e] border-t border-gray-300 dark:border-gray-700 p-4 font-mono text-sm overflow-auto dark:text-gray-200 text-gray-800">
               <div className="flex items-center mb-2">
-                <Terminal size={14} className="mr-2 text-green-400" />
-                <span className="text-green-400">Terminal</span>
+                <Terminal size={14} className="mr-2 text-green-600 dark:text-green-400" />
+                <span className="text-green-600 dark:text-green-400">Terminal</span>
               </div>
-              <p className="text-green-400">$ whoami</p>
+              <p className="text-green-600 dark:text-green-400">$ whoami</p>
               <p className="mb-2">patrick</p>
-              <p className="text-green-400">$ pwd</p>
+              <p className="text-green-600 dark:text-green-400">$ pwd</p>
               <p className="mb-2">/users/patrick/portfolio</p>
-              <p className="text-green-400">$ cat skills.txt</p>
+              <p className="text-green-600 dark:text-green-400">$ cat skills.txt</p>
               <p className="mb-2">JavaScript, TypeScript, React, Next.js, Node.js, Python, FastAPI, Langchain, SQL, NoSQL, Git, Docker, AWS</p>
-              <p className="text-green-400">$ _</p>
+              <p className="text-green-600 dark:text-green-400">$ _</p>
             </div>
           )}
         </div>
       </div>
-      
+
       <Chat />
     </div>
   )
