@@ -55,7 +55,7 @@ export const experiences: Experience[] = [
   {
     title: "Software Engineer, Research",
     company: "Western Sydney University, School of Medicine - GPT for Health",
-    date: "July 2024 - Present",
+    date: "July 2024 - Dec 2024",
     description: [
       "Developed a scalable, AI-powered system to simulate realistic family scenarios for medical students.",
       "Implemented a user-friendly chat interface for students to interact with simulated patients and track their progress.",
@@ -70,7 +70,7 @@ export const experiences: Experience[] = [
   {
     title: "Software Engineer Intern, Mentor",
     company: "Tata Consultancy Services x Creators Club",
-    date: "March 2024 - Present",
+    date: "March 2024 - Feb 2025",
     description: [
       "Working on NaviFi | AI-powered equity research platform in partnership with Tata Consultancy Services to deliver customised AI functionalities using different models and RAG techniques.",
       "Developed SkillPies GitHub course, and mentoring new members on web-related technologies.",
