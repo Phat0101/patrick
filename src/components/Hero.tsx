@@ -65,7 +65,7 @@ const Hero: React.FC<HeroProps> = ({ scrollY }) => {
                 <div className="mb-2">
                   <span className="text-blue-500 dark:text-blue-300">hobbies</span>
                   <span className="text-gray-600 dark:text-gray-400">: </span>
-                  <span className="text-orange-500 dark:text-orange-300">&apos; 📚 Reading, 💪 Gym, 🎧 Music, 💸 Entrepreneurship&apos;</span>
+                  <span className="text-orange-500 dark:text-orange-300">&apos; 📚 Reading, 💪 Gym, 🎧 Music&apos;</span>
                   <span className="text-gray-600 dark:text-gray-400">,</span>
                 </div>
               </div>
