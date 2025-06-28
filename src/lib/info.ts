@@ -11,6 +11,7 @@ import pass_promo_img_url from "../../public/pass_promo.png"
 import shdrlu_1_img_url from "../../public/shdrlu_1.png"
 import shdrlu_2_img_url from "../../public/shdrlu_2.png"
 import Qrisk_Logo from "../../public/Qrisk_Logo.png"
+import Clear_Logo from "../../public/clearai-ai.png"
 // Define types
 export interface Experience {
   title: string;
@@ -40,9 +41,21 @@ export type Skill = string;
 // Export variables
 export const experiences: Experience[] = [
   {
+    title: "Junior Software Engineer",
+    company: "Clear.ai - Sydney, NSW",
+    date: "May 2025 - Present",
+    description: [
+      "Engineering software and AI solutions for Customs Brokerage.",
+    ],
+    icon: "Container", // Use string for icon
+    skills: ["AI agents", "LLMs integration", "Customs Brokerage", "Django", "FastAPI", "Next.js"],
+    images: [Clear_Logo],
+    videos: null,
+  },
+  {
     title: "Junior Full-stack Developer",
     company: "Qrisks - CISO, QLD",
-    date: "Feb 2025 - Present",
+    date: "Feb 2025 - May 2025",
     description: [
       "Maintaining and developing innovative risk quantification solutions using Open FAIR.",
       "Collaborating with cross-functional teams to deliver high-quality software products that meet client requirements."

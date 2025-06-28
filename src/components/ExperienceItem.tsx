@@ -2,7 +2,7 @@
 import React, { type JSX } from 'react';
 import { Button } from "@/components/ui/button";
 import { Experience as ExperienceType } from '@/lib/info';
-import { ExternalLink, Briefcase, Code, BookOpen, Beaker, BookMarked, Cpu, Shield } from 'lucide-react';
+import { ExternalLink, Briefcase, Code, BookOpen, Beaker, BookMarked, Cpu, Shield, Container } from 'lucide-react';
 import Image from 'next/image';
 
 
@@ -18,7 +18,8 @@ const iconMap: { [key: string]: JSX.Element } = {
   Beaker: <Beaker className="w-4 h-4 text-blue-600 dark:text-white" />,
   BookMarked: <BookMarked className="w-4 h-4 text-blue-600 dark:text-white" />,
   Cpu: <Cpu className="w-4 h-4 text-blue-600 dark:text-white" />,
-  Shield: <Shield className="w-4 h-4 text-blue-600 dark:text-white" />
+  Shield: <Shield className="w-4 h-4 text-blue-600 dark:text-white" />,
+  Container: <Container className="w-4 h-4 text-blue-600 dark:text-white" />
 };
 
 const ExperienceItem: React.FC<ExperienceItemProps> = ({ experience, index }) => {

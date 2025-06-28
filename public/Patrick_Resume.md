@@ -33,10 +33,20 @@
 
 ## Work Experience
 
+### Clear ai - Sydney, NSW
+**Location:** Sydney, NSW  
+**Role:** Software Engineer, AI engineer 
+**Date:** May 2025 - Present  
+
+### Qrisk - Parramatta, NSW
+**Location:** Parramatta, NSW  
+**Role:** Junior full stack developer
+**Date:** March 2025 - May 2025  
+
 ### Creators Club - Launch Pad WSU
 **Location:** Parramatta, NSW  
 **Role:** Software Engineer, Mentor  
-**Date:** March 2024 - Present  
+**Date:** March 2024 - November 2024  
 
 - Working on Chrome Extension project in partnership with Tata Consultancy Services to deliver customised AI functionalities using different models and RAG techniques.
 - Developed SkillPies GitHub course and mentoring new members on web-related technologies.

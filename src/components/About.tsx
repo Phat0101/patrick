@@ -5,7 +5,7 @@ import { Code, GraduationCap, Brain, FileCode, Server, Briefcase } from 'lucide-
 
 const About: React.FC = () => {
   const textLines = [
-    "I'm a Full-Stack Developer with a Bachelor's degree in Computer Science (Advanced) from Western Sydney University, majoring in AI with a minor in Cloud Computing. With professional experience across various domains including fintech, healthcare and risk management, I specialise in building robust, scalable applications using modern web technologies. My goal is to leverage my expertise in both frontend and backend development along with AI to create innovative solutions that address complex real-world challenges."
+    "I’m Patrick, currently working as a junior software engineer at Clear.ai, Sydney. I graduated with a Computer Science (Advanced) degree, majoring in AI and minoring in Cloud Computing. With professional experience across various domains including fintech, healthcare and risk management, I specialise in building robust, scalable applications using modern web technologies. My goal is to leverage my expertise in both frontend and backend development along with AI to create innovative solutions that address complex real-world challenges."
   ];
 
   const cards = [
@@ -27,7 +27,7 @@ const About: React.FC = () => {
     {
       icon: <Server className="w-6 h-6" />,
       title: "Backend",
-      description: "Node.js, Python, FastAPI, SQL/NoSQL databases, REST/GraphQL APIs",
+      description: "Node.js, Django, FastAPI, SQL/NoSQL databases, REST/GraphQL APIs",
     },
     {
       icon: <Brain className="w-6 h-6" />,
