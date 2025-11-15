@@ -40,7 +40,7 @@ const IDETabBar: React.FC<IDETabBarProps> = ({
   };
 
   return (
-    <div className="flex overflow-x-auto scrollbar-hide bg-gray-100 dark:bg-[#252526] text-gray-600 dark:text-gray-400 border-b border-gray-300 dark:border-gray-700 min-h-[40px] touch-pan-x">
+    <div className="flex overflow-x-auto scrollbar-hide bg-surface-subtle text-content-secondary border-b border-border min-h-[40px] touch-pan-x">
       <div className="flex min-w-full">
         {menuItems.map((item) => {
           const tabName = `${item.label}.tsx`;
@@ -51,14 +51,14 @@ const IDETabBar: React.FC<IDETabBarProps> = ({
               key={item.id}
               onClick={() => handleTabClick(item.id)}
               className={`
-                flex items-center px-3 py-2 border-r border-gray-300 dark:border-gray-700 cursor-pointer
+                flex items-center px-3 py-2 border-r border-border cursor-pointer transition-colors
                 min-w-[100px] max-w-[160px] sm:min-w-[120px] sm:max-w-[200px] sm:px-4
-                ${isActive ? 'bg-white dark:bg-[#1e1e1e] text-gray-900 dark:text-white' : 'hover:bg-gray-200 dark:hover:bg-[#2d2d2d]'}
+                ${isActive ? 'bg-surface-white text-content-primary' : 'hover:bg-interactive-hover text-content-secondary'}
               `}
             >
               <div className="flex items-center space-x-2 overflow-hidden">
-                <span className="shrink-0">{item.icon}</span>
-                <span className="truncate text-sm">{tabName}</span>
+                <span className={`shrink-0 ${isActive ? 'text-content-primary' : 'text-content-tertiary'}`}>{item.icon}</span>
+                <span className={`truncate text-sm ${isActive ? 'text-content-primary' : 'text-content-secondary'}`}>{tabName}</span>
               </div>
             </div>
           );

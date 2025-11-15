@@ -78,7 +78,7 @@ const IDESidebar: React.FC<IDESidebarProps> = ({
         variant="ghost" 
         size="icon"
         onClick={toggleSidebar}
-        className="md:hidden fixed top-2 left-2 z-50 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
+        className="md:hidden fixed top-2 left-2 z-50 text-content-secondary hover:text-content-primary hover:bg-interactive-hover transition-colors"
       >
         {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
       </Button>
@@ -95,35 +95,35 @@ const IDESidebar: React.FC<IDESidebarProps> = ({
       <div 
         className={`
           fixed md:relative left-0 top-0 h-full z-50
-          bg-gray-100 dark:bg-[#252526] text-gray-800 dark:text-gray-300 border-r border-gray-300 dark:border-gray-700 
+          bg-surface-subtle text-content-secondary border-r border-border 
           overflow-y-auto transition-all duration-300 ease-in-out
           ${sidebarOpen ? 'w-64 translate-x-0' : 'w-0 -translate-x-full md:w-56 md:translate-x-0'}
         `}
       >
         {/* Explorer Header */}
-        <div className="p-3 text-xs uppercase font-semibold tracking-wider text-gray-500 dark:text-gray-400 mt-10 md:mt-0">
+        <div className="p-3 text-xs uppercase font-semibold tracking-wider text-content-tertiary mt-10 md:mt-0">
           Explorer
         </div>
         
         {/* Portfolio Project */}
         <div className="mb-4">
           <div 
-            className="flex items-center px-3 py-2 hover:bg-gray-200 dark:hover:bg-[#2a2d2e] cursor-pointer"
+            className="flex items-center px-3 py-2 hover:bg-interactive-hover cursor-pointer transition-colors"
             onClick={(e) => toggleFolder('portfolio', e)}
           >
-            <div className="flex-shrink-0 mr-1">
+            <div className="flex-shrink-0 mr-1 text-content-tertiary">
               {expandedFolders.portfolio ? 
                 <ChevronDown size={16} /> : 
                 <ChevronRight size={16} />
               }
             </div>
-            <div className="flex-shrink-0 mr-2">
+            <div className="flex-shrink-0 mr-2 text-content-primary">
               {expandedFolders.portfolio ? 
-                <FolderOpen size={16} className="text-blue-600 dark:text-blue-400" /> : 
-                <Folder size={16} className="text-blue-600 dark:text-blue-400" />
+                <FolderOpen size={16} /> : 
+                <Folder size={16} />
               }
             </div>
-            <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap">portfolio</span>
+            <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap text-content-primary">portfolio</span>
           </div>
           
           {/* Only render child content when expanded */}
@@ -132,22 +132,22 @@ const IDESidebar: React.FC<IDESidebarProps> = ({
               {/* Components Folder */}
               <div className="pl-6">
                 <div 
-                  className="flex items-center px-3 py-1 hover:bg-gray-200 dark:hover:bg-[#2a2d2e] cursor-pointer"
+                  className="flex items-center px-3 py-1 hover:bg-interactive-hover cursor-pointer transition-colors"
                   onClick={(e) => toggleFolder('components', e)}
                 >
-                  <div className="flex-shrink-0 mr-1">
+                  <div className="flex-shrink-0 mr-1 text-content-tertiary">
                     {expandedFolders.components ? 
                       <ChevronDown size={16} /> : 
                       <ChevronRight size={16} />
                     }
                   </div>
-                  <div className="flex-shrink-0 mr-2">
+                  <div className="flex-shrink-0 mr-2 text-content-primary">
                     {expandedFolders.components ? 
-                      <FolderOpen size={16} className="text-yellow-600 dark:text-yellow-400" /> : 
-                      <Folder size={16} className="text-yellow-600 dark:text-yellow-400" />
+                      <FolderOpen size={16} /> : 
+                      <Folder size={16} />
                     }
                   </div>
-                  <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap">components</span>
+                  <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap text-content-secondary">components</span>
                 </div>
                 
                 {/* Files - only show when components folder is expanded */}
@@ -158,14 +158,14 @@ const IDESidebar: React.FC<IDESidebarProps> = ({
                         key={item.id}
                         onClick={() => handleNavigation(item.id)}
                         className={`
-                          flex items-center px-3 py-2 hover:bg-gray-200 dark:hover:bg-[#2a2d2e] cursor-pointer
-                          ${activeSection === item.id ? 'bg-blue-100 dark:bg-[#094771] hover:bg-blue-100 dark:hover:bg-[#094771]' : ''}
+                          flex items-center px-3 py-2 hover:bg-interactive-hover cursor-pointer transition-colors
+                          ${activeSection === item.id ? 'bg-interactive-active text-content-primary' : 'text-content-secondary'}
                         `}
                       >
-                        <div className={`mr-2 flex-shrink-0 ${activeSection === item.id ? 'text-blue-700 dark:text-white' : 'text-blue-600 dark:text-blue-400'}`}>
+                        <div className={`mr-2 flex-shrink-0 ${activeSection === item.id ? 'text-content-primary' : 'text-content-tertiary'}`}>
                           {item.icon}
                         </div>
-                        <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap">{`${item.label}.tsx`}</span>
+                        <span className={`text-sm overflow-hidden text-ellipsis whitespace-nowrap ${activeSection === item.id ? 'text-content-primary' : 'text-content-secondary'}`}>{`${item.label}.tsx`}</span>
                       </div>
                     ))}
                   </div>
@@ -175,31 +175,31 @@ const IDESidebar: React.FC<IDESidebarProps> = ({
               {/* Assets Folder */}
               <div className="pl-6">
                 <div 
-                  className="flex items-center px-3 py-1 hover:bg-gray-200 dark:hover:bg-[#2a2d2e] cursor-pointer"
+                  className="flex items-center px-3 py-1 hover:bg-interactive-hover cursor-pointer transition-colors"
                   onClick={(e) => toggleFolder('assets', e)}
                 >
-                  <div className="flex-shrink-0 mr-1">
+                  <div className="flex-shrink-0 mr-1 text-content-tertiary">
                     {expandedFolders.assets ? 
                       <ChevronDown size={16} /> : 
                       <ChevronRight size={16} />
                     }
                   </div>
-                  <div className="flex-shrink-0 mr-2">
+                  <div className="flex-shrink-0 mr-2 text-content-primary">
                     {expandedFolders.assets ? 
-                      <FolderOpen size={16} className="text-green-600 dark:text-green-400" /> : 
-                      <Folder size={16} className="text-green-600 dark:text-green-400" />
+                      <FolderOpen size={16} /> : 
+                      <Folder size={16} />
                     }
                   </div>
-                  <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap">assets</span>
+                  <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap text-content-secondary">assets</span>
                 </div>
                 
                 {/* Only show assets content when expanded */}
                 {expandedFolders.assets && (
                   <div className="pl-6">
-                    <div className="flex items-center px-3 py-1 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center px-3 py-1 text-sm text-content-tertiary">
                       <span className="ml-5">images/</span>
                     </div>
-                    <div className="flex items-center px-3 py-1 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center px-3 py-1 text-sm text-content-tertiary">
                       <span className="ml-5">fonts/</span>
                     </div>
                   </div>
@@ -209,31 +209,31 @@ const IDESidebar: React.FC<IDESidebarProps> = ({
               {/* Utils Folder */}
               <div className="pl-6">
                 <div 
-                  className="flex items-center px-3 py-1 hover:bg-gray-200 dark:hover:bg-[#2a2d2e] cursor-pointer"
+                  className="flex items-center px-3 py-1 hover:bg-interactive-hover cursor-pointer transition-colors"
                   onClick={(e) => toggleFolder('utils', e)}
                 >
-                  <div className="flex-shrink-0 mr-1">
+                  <div className="flex-shrink-0 mr-1 text-content-tertiary">
                     {expandedFolders.utils ? 
                       <ChevronDown size={16} /> : 
                       <ChevronRight size={16} />
                     }
                   </div>
-                  <div className="flex-shrink-0 mr-2">
+                  <div className="flex-shrink-0 mr-2 text-content-primary">
                     {expandedFolders.utils ? 
-                      <FolderOpen size={16} className="text-orange-600 dark:text-orange-400" /> : 
-                      <Folder size={16} className="text-orange-600 dark:text-orange-400" />
+                      <FolderOpen size={16} /> : 
+                      <Folder size={16} />
                     }
                   </div>
-                  <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap">utils</span>
+                  <span className="text-sm overflow-hidden text-ellipsis whitespace-nowrap text-content-secondary">utils</span>
                 </div>
                 
                 {/* Only show utils content when expanded */}
                 {expandedFolders.utils && (
                   <div className="pl-6">
-                    <div className="flex items-center px-3 py-1 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center px-3 py-1 text-sm text-content-tertiary">
                       <span className="ml-5">helpers.ts</span>
                     </div>
-                    <div className="flex items-center px-3 py-1 text-sm text-gray-600 dark:text-gray-400">
+                    <div className="flex items-center px-3 py-1 text-sm text-content-tertiary">
                       <span className="ml-5">constants.ts</span>
                     </div>
                   </div>

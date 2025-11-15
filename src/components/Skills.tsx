@@ -32,16 +32,16 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
     <section
       ref={ref}
       id="skills"
-      className="py-16 px-4 font-mono bg-white dark:bg-[#1e1e1e] text-gray-800 dark:text-gray-200"
+      className="py-16 md:py-24 px-4 font-mono bg-background text-content-primary"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-container">
         {/* File header like a code comment */}
-        <div className="mb-8 max-w-4xl mx-auto text-left bg-gray-100 dark:bg-[#2d2d2d] p-4 rounded-md border-l-4 border-green-500 overflow-x-auto">
+        <div className="mb-8 max-w-4xl mx-auto text-left bg-surface-muted p-4 md:p-6 rounded border-l-4 border-content-primary overflow-x-auto">
           <div className="flex items-center mb-2">
-            <FileCode className="w-5 h-5 mr-2 text-green-600 dark:text-green-400" />
-            <span className="text-lg font-semibold text-green-600 dark:text-green-400">Skills.tsx</span>
+            <FileCode className="w-5 h-5 mr-2 text-content-primary" />
+            <span className="text-lg font-semibold text-content-primary">Skills.tsx</span>
           </div>
-          <pre className="text-green-600 dark:text-green-400">
+          <pre className="text-content-secondary text-xs md:text-sm">
             <code>{`/**
  * Component: Skills
  * Description: Technical skills organized by category
@@ -53,55 +53,55 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
         {/* Skills as JSON object declaration */}
         <div className="max-w-4xl mx-auto mb-8 text-left">
           <div className="mb-4 flex items-center">
-            <Code className="w-5 h-5 mr-2 text-blue-600 dark:text-blue-400" />
-            <span className="text-xl font-semibold text-blue-600 dark:text-blue-400">Technical Expertise</span>
+            <Code className="w-5 h-5 mr-2 text-content-primary" />
+            <span className="heading !mb-0 text-content-primary">Technical Expertise</span>
           </div>
           
           <div className="pl-4 mb-4">
-            <span className="text-purple-600 dark:text-purple-400">const </span>
-            <span className="text-blue-600 dark:text-blue-400">skills </span>
-            <span className="text-gray-600 dark:text-gray-400">= </span>
-            <span className="text-orange-500 dark:text-orange-300">{"{"}</span>
+            <span className="text-content-tertiary">const </span>
+            <span className="text-content-primary">skills </span>
+            <span className="text-content-secondary">= </span>
+            <span className="text-content-primary">{"{"}</span>
           </div>
           
-          <div className="bg-gray-100 dark:bg-[#2a2a2a] p-4 rounded-md border border-gray-300 dark:border-gray-700 mb-8">
+          <div className="bg-surface-subtle p-4 md:p-6 rounded border border-border mb-8">
             {/* Render skills as JSON-like structure */}
             {Object.entries(skillGroups).map(([category, categorySkills], groupIndex) => (
               <div key={category} className="mb-4 last:mb-0">
                 <div className="mb-2">
-                  <span className="text-green-600 dark:text-green-400 pl-4">{category}</span>
-                  <span className="text-gray-600 dark:text-gray-400">: </span>
-                  <span className="text-purple-600 dark:text-purple-400">{"["}</span>
+                  <span className="text-content-primary pl-4">{category}</span>
+                  <span className="text-content-secondary">: </span>
+                  <span className="text-content-tertiary">{"["}</span>
                 </div>
                 
-                <div className="flex flex-wrap gap-2 pl-8 mb-2">
+                <div className="flex flex-wrap gap-2 pl-6 md:pl-8 mb-2">
                   {categorySkills.map((skill, index) => (
                     <motion.div
                       key={index}
-                      className="bg-white dark:bg-[#1e1e1e] border border-gray-300 dark:border-gray-700 hover:border-blue-500 rounded-sm 
-                               px-3 py-1 text-blue-500 dark:text-blue-300 cursor-default transition-all duration-200"
+                      className="bg-surface-white border border-border hover:border-content-primary rounded-sm 
+                               px-3 py-1 text-content-primary cursor-default transition-all duration-200"
                       initial={{ opacity: 0, x: -20 }}
                       animate={isIntersecting ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.3, delay: (groupIndex * 0.1) + (index * 0.05) }}
                     >
-                      <span className="text-gray-600 dark:text-gray-400">&quot;</span>
+                      <span className="text-content-secondary">&quot;</span>
                       {skill}
-                      <span className="text-gray-600 dark:text-gray-400">&quot;</span>
-                      {index < categorySkills.length - 1 && <span className="text-gray-600 dark:text-gray-400">,</span>}
+                      <span className="text-content-secondary">&quot;</span>
+                      {index < categorySkills.length - 1 && <span className="text-content-secondary">,</span>}
                     </motion.div>
                   ))}
                 </div>
                 
                 <div className="pl-4">
-                  <span className="text-purple-600 dark:text-purple-400">{"]"}</span>
-                  {groupIndex < Object.keys(skillGroups).length - 1 && <span className="text-gray-600 dark:text-gray-400">,</span>}
+                  <span className="text-content-tertiary">{"]"}</span>
+                  {groupIndex < Object.keys(skillGroups).length - 1 && <span className="text-content-secondary">,</span>}
                 </div>
               </div>
             ))}
           </div>
           
           <div>
-            <span className="text-orange-500 dark:text-orange-300">{"}"}</span><span className="text-gray-600 dark:text-gray-400">;</span>
+            <span className="text-content-primary">{"}"}</span><span className="text-content-secondary">;</span>
           </div>
         </div>
       </div>

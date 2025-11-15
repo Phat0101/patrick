@@ -97,7 +97,7 @@ export default function Page() {
           </div>
 
           {/* Main Content Area (IDE Editor) */}
-          <div className="flex-grow overflow-auto bg-white dark:bg-[#1e1e1e] text-gray-900 dark:text-gray-200">
+          <div className="flex-grow overflow-auto bg-background text-content-primary">
             <div id="home">
               <Hero scrollY={scrollY} />
             </div>
@@ -121,18 +121,18 @@ export default function Page() {
 
           {/* Terminal Panel */}
           {showTerminal && (
-            <div className="h-[100vh] bg-gray-100 dark:bg-[#1e1e1e] border-t border-gray-300 dark:border-gray-700 p-4 font-mono text-sm overflow-auto dark:text-gray-200 text-gray-800">
+            <div className="h-[100vh] bg-surface-subtle border-t border-border p-4 font-mono text-sm overflow-auto text-content-secondary">
               <div className="flex items-center mb-2">
-                <Terminal size={14} className="mr-2 text-green-600 dark:text-green-400" />
-                <span className="text-green-600 dark:text-green-400">Terminal</span>
+                <Terminal size={14} className="mr-2 text-content-primary" />
+                <span className="text-content-primary">Terminal</span>
               </div>
-              <p className="text-green-600 dark:text-green-400">$ whoami</p>
-              <p className="mb-2">patrick</p>
-              <p className="text-green-600 dark:text-green-400">$ pwd</p>
-              <p className="mb-2">/users/patrick/portfolio</p>
-              <p className="text-green-600 dark:text-green-400">$ cat skills.txt</p>
-              <p className="mb-2">JavaScript, TypeScript, React, Next.js, Node.js, Python, FastAPI, Langchain, SQL, NoSQL, Git, Docker, AWS</p>
-              <p className="text-green-600 dark:text-green-400">$ _</p>
+              <p className="text-content-primary">$ whoami</p>
+              <p className="mb-2 text-content-secondary">patrick</p>
+              <p className="text-content-primary">$ pwd</p>
+              <p className="mb-2 text-content-secondary">/users/patrick/portfolio</p>
+              <p className="text-content-primary">$ cat skills.txt</p>
+              <p className="mb-2 text-content-secondary">JavaScript, TypeScript, React, Next.js, Node.js, Python, FastAPI, Langchain, SQL, NoSQL, Git, Docker, AWS</p>
+              <p className="text-content-primary">$ _</p>
             </div>
           )}
         </div>

@@ -11,7 +11,7 @@ import pass_promo_img_url from "../../public/pass_promo.png"
 import shdrlu_1_img_url from "../../public/shdrlu_1.png"
 import shdrlu_2_img_url from "../../public/shdrlu_2.png"
 import Qrisk_Logo from "../../public/Qrisk_Logo.png"
-import Clear_Logo from "../../public/clearai-ai.png"
+import Clear_Logo from "../../public/clearai.avif"
 // Define types
 export interface Experience {
   title: string;
@@ -41,11 +41,12 @@ export type Skill = string;
 // Export variables
 export const experiences: Experience[] = [
   {
-    title: "Junior Software Engineer",
+    title: "Software Engineer",
     company: "Clear.ai - Sydney, NSW",
     date: "May 2025 - Present",
     description: [
-      "Engineering software and AI solutions for Customs Brokerage.",
+      "Clear.ai",
+      "Engineering software and AI solutions for Customs Brokerage."    
     ],
     icon: "Container", // Use string for icon
     skills: ["AI agents", "LLMs integration", "Customs Brokerage", "Django", "FastAPI", "Next.js"],
