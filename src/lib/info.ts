@@ -41,13 +41,12 @@ export const experiences: Experience[] = [
     date: "Nov 2025 – Present",
     location: "Sydney · On-site",
     highlights: [
-      "Full-stack engineer on the customs and freight-forwarding platform: about 1,700 commits across the React + TanStack + Convex front end and the Django + Celery back end, covering declaration workflows, automation rules, shipment tracking, CRM and billing.",
-      "Built TariffChat™, an AI tariff classification assistant (Next.js, AI SDK, pgvector search, web research tools) now used by 300+ customs brokers, with 35,000+ classifications across APAC.",
-      "Core contributor to the transport management system for Qube: Convex realtime back end, an Expo driver app and a React fleet portal, including the customs integration module.",
-      "Built LLM classification services for AU, NZ, UK, US, CA and SG tariffs with FastAPI and pydantic-ai, grounding answers in source text to cut unsupported citations.",
-      "Run an internal AI engineering agent that starts Claude Code and Codex sessions from Slack, with automated PR review and a live session viewer.",
+      "Build full-stack features across Clear.ai's freight forwarding, customs and transport management products.",
+      "Work on TariffChat™, an AI tariff classification assistant used by 400+ customs brokers at 100+ organisations across APAC, with 35,000+ classifications.",
+      "Build LLM-powered classification and document workflows that help brokers work faster and more accurately.",
+      "Lead features from customer conversations through design and delivery.",
     ],
-    skills: ["TanStack", "Convex", "Django", "AI SDK", "pydantic-ai", "AWS CDK", "Rust"],
+    skills: ["Full-stack", "AI agents", "LLMs", "Project management", "Leadership"],
     link: "https://clear.ai",
   },
   {
@@ -56,9 +55,9 @@ export const experiences: Experience[] = [
     date: "May 2025 – Oct 2025",
     location: "Sydney · On-site",
     highlights: [
-      "Shipped early AI prototypes for customs brokerage: a broker agent, AI document extraction for invoices and customs data, and a customs entry audit tool.",
+      "Engineered software and AI solutions for customs brokerage.",
     ],
-    skills: ["Next.js", "FastAPI", "Gemini", "Prisma", "Convex"],
+    skills: ["Generative AI", "LLMs", "Full-stack"],
   },
   {
     company: "QRisk",
@@ -102,14 +101,14 @@ export const projects: Project[] = [
     title: "TariffChat™",
     year: "2025",
     summary: "Free AI assistant for Australian customs brokers: tariff classification, concession orders and duty rates in one searchable chat.",
-    stack: ["Next.js", "AI SDK", "pgvector", "Postgres"],
+    stack: [],
     label: "Clear.ai · production",
   },
   {
-    title: "Transport management for Qube",
+    title: "Transport management system",
     year: "2025–26",
-    summary: "Realtime TMS with a driver tablet app, a fleet portal and customs integration for a large Australian logistics operator.",
-    stack: ["Convex", "Expo", "React", "TanStack Router"],
+    summary: "Driver, fleet and dispatch tooling for a transport management product at Clear.ai.",
+    stack: [],
     label: "Clear.ai · production",
   },
   {
@@ -145,10 +144,10 @@ export const projects: Project[] = [
 ];
 
 export const skillGroups: { label: string; items: string[] }[] = [
-  { label: "AI & LLMs", items: ["AI SDK", "pydantic-ai", "LangGraph", "RAG & pgvector", "Document extraction", "Claude", "Gemini", "OpenAI"] },
-  { label: "Backend", items: ["Python", "Django", "Celery", "FastAPI", "Convex", "Hono", "Bun", "Rust (Axum)"] },
+  { label: "AI & LLMs", items: ["AI SDK", "LangGraph", "RAG", "Document extraction", "Claude", "Gemini", "OpenAI"] },
+  { label: "Backend", items: ["Python", "Django", "FastAPI", "Node.js", "Convex", "Hono", "Bun", "Rust"] },
   { label: "Frontend", items: ["TypeScript", "React", "Next.js", "TanStack", "Tailwind CSS", "shadcn/ui", "Expo"] },
-  { label: "Data & infra", items: ["PostgreSQL", "Redis", "Prisma", "Drizzle", "AWS CDK", "Docker", "Vercel", "GitHub Actions"] },
+  { label: "Data & infra", items: ["PostgreSQL", "Redis", "Prisma", "Drizzle", "AWS", "Docker", "Vercel", "GitHub Actions"] },
 ];
 
 export const skills = skillGroups.flatMap((g) => g.items);

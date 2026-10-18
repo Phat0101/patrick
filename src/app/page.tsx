@@ -48,8 +48,8 @@ export default function Page() {
             </h1>
 
             <p className="max-w-[54ch] text-[17px] leading-relaxed text-text-secondary">
-              I&apos;m Patrick, an early engineer at Clear.ai in Sydney. I ship full-stack logistics products, from Django and Convex
-              back ends to React and TanStack front ends and the AI agents in between. Lately: TariffChat™, used by 300+ customs brokers.
+              I&apos;m Patrick, an early engineer at Clear.ai in Sydney. I ship full-stack logistics products and the AI agents
+              inside them. Lately: TariffChat™, used by 400+ customs brokers at 100+ organisations across APAC.
             </p>
 
             <div className="flex flex-wrap items-center gap-2">
@@ -116,7 +116,7 @@ export default function Page() {
                       <span className="shrink-0 font-mono text-xs text-muted-foreground tabular-nums">{project.year}</span>
                     </div>
                     <p className="text-sm leading-relaxed text-text-secondary">{project.summary}</p>
-                    <p className="pt-1 font-mono text-xs text-muted-foreground">{project.stack.join(" · ")}</p>
+                    {project.stack.length > 0 && <p className="pt-1 font-mono text-xs text-muted-foreground">{project.stack.join(" · ")}</p>}
                   </div>
                 </>
               );
@@ -216,7 +216,6 @@ export default function Page() {
       <footer className="border-t">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-xs text-muted-foreground md:px-6">
           <span>© {new Date().getFullYear()} Patrick Nguyen · Sydney</span>
-          <span className="font-mono">Next.js 16 · AI SDK 7 · Gemini 3.8 Flash</span>
         </div>
       </footer>
     </>

@@ -76,7 +76,6 @@ export function AgentChat({ className }: { className?: string }) {
         <header className="flex h-11 shrink-0 items-center gap-2 border-b px-4 text-sm">
           <span className={cn("size-1.5 rounded-full bg-success", busy && "animate-pulse")} aria-hidden />
           <span className="font-medium">Ask my agent</span>
-          <span className="hidden font-mono text-xs text-muted-foreground sm:inline">gemini-3.8-flash</span>
           {messages.length > 0 && (
             <Button
               variant="ghost"

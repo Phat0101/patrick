@@ -12,7 +12,7 @@
 
 ## About
 
-I'm an early software engineer at Clear.ai, an AI-native software company for freight forwarders and customs brokers in Sydney. I build full-stack logistics products across freight forwarding, customs and transport management (TMS). A recent highlight is TariffChat™, a tariff classification assistant that has served 35,000+ classifications for 100+ organisations across APAC.
+I'm an early software engineer at Clear.ai, an AI-native software company for freight forwarders and customs brokers in Sydney. I build full-stack logistics products across freight forwarding, customs and transport management (TMS). A recent highlight is TariffChat™, a tariff classification assistant that has served 35,000+ classifications for 400+ brokers at 100+ organisations across APAC.
 
 These days tools like Claude Code handle much of the implementation, so more of my time goes into understanding what customers are struggling with and how a solution should fit together. I still believe in holding the whole problem in my head first — a habit from writing algorithms by hand on my school's competitive programming team in Vietnam.
 
@@ -23,19 +23,16 @@ I moved to Australia from Vietnam in 2018 for high school, finished with an ATAR
 ## Work Experience
 
 ### Clear.ai — Sydney, NSW (On-site, full-time)
-AI-native software for freight forwarders and customs brokers. In 2026 Clear.ai migrated Qube's freight forwarding operation onto its platform in 18 weeks, across forwarding, customs and billing, with autonomous AI agents running in live workflows.
+AI-native software for freight forwarders and customs brokers.
 
 **Software Engineer** · Nov 2025 – Present
-- Full-stack engineer on the customs and freight-forwarding platform (about 1,700 commits): React, TanStack Router/Query/Table and Convex on the front end; Django, DRF, Celery, Postgres/pgvector and AWS on the back end. Built declaration workflows, workflow automation rules, shipment tracking timelines, CRM and billing features, and large-list performance work.
-- Built TariffChat™, an AI tariff classification assistant for licensed customs brokers, using Next.js 16, the Vercel AI SDK across several model providers, pgvector semantic search over tariff data, and web research tools. 35,000+ classifications, 300+ brokers and 100+ organisations across APAC. It covers the Australian Working Tariff, including Schedule 3 classifications, Tariff Concession Orders, Schedule 4 concessional rates and by-laws.
-- Core contributor (about 650 commits) to the transport management system built for Qube: a Convex realtime back end, an Expo / React Native driver tablet app and a React + TanStack fleet portal, including a customs integration module.
-- Built LLM classification services for AU, NZ, UK, US, CA and SG tariffs plus e-commerce risk, using FastAPI and pydantic-ai. Grounded agents in supplied source text to cut unsupported citations, and tuned prompts against a broker benchmark.
-- Built and run an internal AI engineering agent that starts Claude Code / Codex sessions from Slack, with automated PR review, role-scoped tool policies and a live session viewer.
-- Infrastructure as code with AWS CDK (CloudFront, RDS, SQS, KMS) and GitHub OIDC CI/CD. Contributed to a Rust (Axum, Tokio) email ingestion and vector matching service.
+- Build full-stack features across Clear.ai's freight forwarding, customs and transport management products.
+- Work on TariffChat™, an AI tariff classification assistant for licensed customs brokers: 35,000+ classifications, 400+ brokers and 100+ organisations across APAC. It covers the Australian Working Tariff, including Schedule 3 classifications, Tariff Concession Orders, Schedule 4 concessional rates and by-laws.
+- Build LLM-powered classification and document workflows that help brokers work faster and more accurately.
 - Take on project management and technical leadership, working directly with customers on what to build.
 
 **Junior Software Engineer** · May 2025 – Oct 2025
-- Engineered early AI prototypes for customs brokerage: a broker agent (Next.js, AI SDK, Gemini), AI document extraction for invoices and customs data (Convex, Gemini), and a rule-based customs entry audit tool (FastAPI, pydantic-ai).
+- Engineered software and AI solutions for customs brokerage.
 
 ### QRisk — Queensland (Remote, contract)
 **Junior Full-stack Developer** · Feb 2025 – May 2025
@@ -108,12 +105,13 @@ My first deployed app: Node, Express, JWT and MongoDB on Heroku, with an Electro
 
 ## Skills
 
+General tools I've worked with across work and personal projects:
+
 - **Languages:** TypeScript/JavaScript, Python, Rust, C/C++, Java, SQL
-- **AI/LLM:** Vercel AI SDK, pydantic-ai, LangChain/LangGraph, RAG and vector search (pgvector, embeddings), structured document extraction, tool-calling agents, LLM-as-judge evaluation, Claude, Gemini, OpenAI, PyTorch
-- **Backend:** Django, DRF, Celery, FastAPI, Convex, Hono, Bun, Node.js, Rust (Axum, Tokio), REST/OpenAPI, EDI/EDIFACT and XML messaging
-- **Frontend:** React, Next.js 16, Vite, TanStack Router/Query/Table/Virtual, Tailwind CSS v4, shadcn/ui, AG Grid, Expo / React Native, Electron
-- **Data & infra:** PostgreSQL, pgvector, Redis, Prisma, Drizzle, Supabase, AWS (S3, SQS, RDS, CloudFront, KMS, Textract, CDK), Docker, Vercel, Railway, Cloudflare, GitHub Actions, OpenTelemetry, Vitest, Playwright
-- **Integrations:** Slack (Bolt), Clerk, Postmark/Resend, PostHog
+- **AI/LLM:** Vercel AI SDK, LangChain/LangGraph, RAG and vector search, document extraction, tool-calling agents, Claude, Gemini, OpenAI, PyTorch
+- **Backend:** Django, FastAPI, Convex, Hono, Bun, Node.js, REST APIs
+- **Frontend:** React, Next.js, Vite, TanStack, Tailwind CSS, shadcn/ui, Expo / React Native, Electron
+- **Data & infra:** PostgreSQL, Redis, Prisma, Drizzle, Supabase, AWS, Docker, Vercel, Cloudflare, GitHub Actions, Playwright
 - **Domain:** Freight forwarding, customs brokerage, tariff classification, transport management, risk quantification (Open FAIR)
 - **Working style:** Project management, stakeholder management, team leadership, mentoring
 
