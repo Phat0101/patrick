@@ -1,154 +1,131 @@
 # Patrick Nguyen
 
-**Location:** Fairfield, NSW  
-**LinkedIn:** [LinkedIn Profile](https://www.linkedin.com/in/patrick-nguyen-44766a188/)  
-**GitHub:** [Phat0101](https://github.com/Phat0101)  
-**Email:** [Patrick.Nguyen01@outlook.com](mailto:Patrick.Nguyen01@outlook.com)  
-**Phone:** 0466-420-261  
+**Role:** Software Engineer @ Clear.ai
+**Location:** Sydney, NSW, Australia
+**LinkedIn:** [linkedin.com/in/patrick-nguyen-44766a188](https://www.linkedin.com/in/patrick-nguyen-44766a188/)
+**GitHub:** [Phat0101](https://github.com/Phat0101)
+**Email:** [Patrick.Nguyen01@outlook.com](mailto:Patrick.Nguyen01@outlook.com)
+**Website:** [patrickdevs.vercel.app](https://patrickdevs.vercel.app)
+**Languages:** English, Vietnamese
 
 ---
 
-## Education
+## About
 
-**Western Sydney University** - Bachelor of Computer Science (Advanced)  
-**Location:** Parramatta, NSW  
-**GPA:** 6.5/7  
-**Major:** AI, **Minor:** Cloud Computing  
-**Graduation:** Jan 2025 (Graduated)
+I'm an early software engineer at Clear.ai, an AI-native software company for freight forwarders and customs brokers in Sydney. I build full-stack logistics products across freight forwarding, customs and transport management (TMS). A recent highlight is TariffChat™, a tariff classification assistant that has served 35,000+ classifications for 100+ organisations across APAC.
 
-**Relevant Coursework:**  
-- Data Structures and Algorithms  
-- System Programming  
-- Cloud Computing Architecture  
-- Artificial Intelligence  
-- Machine Learning and Data Science  
-- Cyber and Information Security  
-- Robotics Programming
+These days tools like Claude Code handle much of the implementation, so more of my time goes into understanding what customers are struggling with and how a solution should fit together. I still believe in holding the whole problem in my head first — a habit from writing algorithms by hand on my school's competitive programming team in Vietnam.
 
-**Awards:**  
-- Dean’s Merit List 2022, 2023  
-- Vice-Chancellor's Academic Excellence Undergraduate Scholarships  
+I moved to Australia from Vietnam in 2018 for high school, finished with an ATAR of 97.6, and graduated with distinction in Computer Science (Advanced) from Western Sydney University.
 
 ---
 
 ## Work Experience
 
-### Clear ai - Sydney, NSW
-**Location:** Sydney, NSW  
-**Role:** Software Engineer, AI engineer 
-**Date:** May 2025 - Present  
+### Clear.ai — Sydney, NSW (On-site, full-time)
+AI-native software for freight forwarders and customs brokers. In 2026 Clear.ai migrated Qube's freight forwarding operation onto its platform in 18 weeks, across forwarding, customs and billing, with autonomous AI agents running in live workflows.
 
-### Qrisk - Parramatta, NSW
-**Location:** Parramatta, NSW  
-**Role:** Junior full stack developer
-**Date:** March 2025 - May 2025  
+**Software Engineer** · Nov 2025 – Present
+- Full-stack engineer on the customs and freight-forwarding platform (about 1,700 commits): React, TanStack Router/Query/Table and Convex on the front end; Django, DRF, Celery, Postgres/pgvector and AWS on the back end. Built declaration workflows, workflow automation rules, shipment tracking timelines, CRM and billing features, and large-list performance work.
+- Built TariffChat™, an AI tariff classification assistant for licensed customs brokers, using Next.js 16, the Vercel AI SDK across several model providers, pgvector semantic search over tariff data, and web research tools. 35,000+ classifications, 300+ brokers and 100+ organisations across APAC. It covers the Australian Working Tariff, including Schedule 3 classifications, Tariff Concession Orders, Schedule 4 concessional rates and by-laws.
+- Core contributor (about 650 commits) to the transport management system built for Qube: a Convex realtime back end, an Expo / React Native driver tablet app and a React + TanStack fleet portal, including a customs integration module.
+- Built LLM classification services for AU, NZ, UK, US, CA and SG tariffs plus e-commerce risk, using FastAPI and pydantic-ai. Grounded agents in supplied source text to cut unsupported citations, and tuned prompts against a broker benchmark.
+- Built and run an internal AI engineering agent that starts Claude Code / Codex sessions from Slack, with automated PR review, role-scoped tool policies and a live session viewer.
+- Infrastructure as code with AWS CDK (CloudFront, RDS, SQS, KMS) and GitHub OIDC CI/CD. Contributed to a Rust (Axum, Tokio) email ingestion and vector matching service.
+- Take on project management and technical leadership, working directly with customers on what to build.
 
-### Creators Club - Launch Pad WSU
-**Location:** Parramatta, NSW  
-**Role:** Software Engineer, Mentor  
-**Date:** March 2024 - November 2024  
+**Junior Software Engineer** · May 2025 – Oct 2025
+- Engineered early AI prototypes for customs brokerage: a broker agent (Next.js, AI SDK, Gemini), AI document extraction for invoices and customs data (Convex, Gemini), and a rule-based customs entry audit tool (FastAPI, pydantic-ai).
 
-- Working on Chrome Extension project in partnership with Tata Consultancy Services to deliver customised AI functionalities using different models and RAG techniques.
-- Developed SkillPies GitHub course and mentoring new members on web-related technologies.
-- Serving as full-stack web developer and team leader for club projects.
+### QRisk — Queensland (Remote, contract)
+**Junior Full-stack Developer** · Feb 2025 – May 2025
+- Maintained and developed risk quantification software based on Open FAIR, using Next.js, FastAPI, Prisma ORM and AWS.
+- My first paid software role.
 
-### Western Sydney University - SSTaRs Staff Roster - Zoom Summariser
-**Location:** Kingswood, NSW  
-**Role:** Full-stack Developer Intern  
-**Date:** March 2024 - November 2024
+### Tata Consultancy Services × Creators Club — North Sydney (Hybrid, internship)
+**Full-stack Developer Intern – Partnership** · Oct 2024 – Feb 2025
+- Co-founded NaviFi, an AI-powered investment research and community platform, built in partnership with TCS for their Shark Tank competition. Funded by the Creators Club and mentored by TCS.
+- Delivered customised AI functionality using multiple models and agentic RAG techniques; also built a Chrome extension.
+- Developed the SkillPies GitHub course and mentored new club members on web technologies.
 
-- Migrated file-based process to an interactive web application using React.js, Node.js, and MongoDB.
-- Implemented features to manage staff preferences, sick leaves, and holidays.
-- Enabled users to add shifts to calendar apps and export to CSV and PDF formats.
+### Western Sydney University — Kingswood, NSW (Hybrid, internship)
+**Full-stack Developer Intern** · Mar 2024 – Nov 2024
+- Migrated the SSTaRs staff roster from a file-based process to an interactive web app (React, Node.js, MongoDB).
+- Handled staff preferences, sick leave, and public and university holidays; calendar export plus CSV and PDF downloads.
+- Built the Zoom Summariser for multi-speaker transcript summarisation with LLMs.
 
-### Western Sydney University - Peer Assisted Study Sessions  
-**Location:** Parramatta, NSW  
-**Role:** Maths Facilitator  
-**Date:** Feb 2023 - June 2023  
+### Western Sydney University, School of Medicine — GPT for Health (Research)
+**Software Engineer, Project Manager** · Jul 2024 – Dec 2024 · Supervisor: Assoc. Prof. Brahm Marjadi
+- Built an AI system (Next.js, TypeScript, SQLite, AWS) that simulates realistic family scenarios for medical students in the "Health Across the Lifespan" workshops.
+- Researched how students respond to LLM-simulated patients compared with real interactions.
 
-- Assisted peers in understanding statistics using R Studio and Python.
-- Hosted weekly sessions, prepared tailored materials based on student performance.
-- Resulted in a 30% improvement in understanding and 75% of students achieving Distinction and above.
+### Western Sydney University — Peer Assisted Study Sessions
+**Maths Facilitator (Statistics)** · Feb 2023 – Jun 2023
+- Ran weekly sessions on statistical decision making with R and Python; about 30% improvement on previous semesters, with 75% of students achieving Distinction or above.
+
+### Retail (part-time, while studying)
+- **Sales Representative – Beauty Advisor, Prestige** · Oct 2022 – Jan 2024 — fragrance brands (Versace, Michael Kors, Moschino and others) at Myer and David Jones.
+- **Sales Consultant, Swarovski** · Oct 2020 – Feb 2022.
+- Gave me a user-first perspective and strong communication skills that I bring to product work.
 
 ---
 
-## Research Experience
+## Education
 
-### Western Sydney University, School of Medicine - GPT for Health  
-**Location:** Remote  
-**Role:** Software Engineer, Project Manager  
-**Supervisor:** Assoc. Prof. Brahm Marjadi @ WSU  
-**Date:** July 2023 - Present  
+**Western Sydney University** — Bachelor of Computer Science (Advanced), with distinction
+Major: Artificial Intelligence · Minor: Cloud Computing · GPA 6.54/7 · Graduated 2024
+- Dean's Merit List 2022, 2023 and 2024
+- Vice-Chancellor's Academic Excellence Undergraduate Scholarship
+- Coursework: Data Structures & Algorithms, Systems Programming, Cloud Computing Architecture, AI, Machine Learning & Data Science, Cyber Security, Robotics
 
-- Developed a scalable AI-powered system using Next.js, React.js, TypeScript, and SQLite to simulate realistic family scenarios for medical students.
-- Generated diverse family backgrounds to enhance student engagement for the "Health Across the Lifespan" workshops.
-- Deployed application on AWS, ensuring scalability and performance.
-- Researched and compared student interactions with LLMs vs real patient interactions.
+**High school (NSW)** — ATAR 97.6; first in Maths Advanced, Software Design & Development, and Information Processes & Technology.
+
+**ACS Professional Year Program** — completed Apr 2026 (32 weeks alongside full-time work; professional communication and feedback).
 
 ---
 
 ## Projects
 
-### Langgraph - Multiple Agents Report Writing to research the stock industry.
+### Claude Code Diff Review (2026, open source)
+VS Code / Cursor extension that lets Claude Code edit without blocking on approvals, captures every change as a before/after diff, and offers batch keep or revert when the agent finishes. Built with Claude Code hooks, a local Bun server and the VS Code extension API. [github.com/Phat0101/claude-diff-review](https://github.com/Phat0101/claude-diff-review)
 
-- An AI-powered system for conducting comprehensive industry analysis using LangGraph
+### Zoom Summariser (2024)
+Multi-speaker transcript summarisation: assign timeframes to speakers, summarise each with customisable LLM prompts, download the results. [zoom-summariser.vercel.app](https://zoom-summariser.vercel.app/)
 
-- This system performs automated industry research and analysis by:
-  - Creating research plans with targeted search queries
-  - Conducting parallel web searches using Tavily API
-  - Analysing industry data, risks, and trends in parallel
-  - Generating comprehensive research reports
+### LangGraph industry research agents
+Multi-agent system that plans research queries, runs parallel web searches (Tavily), analyses industry data, risks and trends, and writes a full report.
 
-### Zoom Summariser - Web app
-**Date** July 2024 - Present
+### Sudoku Solver
+My first real program (in Pascal, as a teenager) was a backtracking Sudoku solver. The web version solves puzzles typed in manually or photographed and read by a vision model.
 
-- Multiple Speaker and Timeframe Management: Allows users to add, delete, and assign specific timeframes to multiple speakers, ensuring accurate and organized transcript chunking for better summarization.
-- Automated and Customizable Summarization: Automates the summarization process using a Large Language Model (LLM) with customizable system prompts, saving users time and providing tailored summaries based on specific needs.
-- Enhanced User Experience with Downloadable Summaries: Provides a user-friendly interface for uploading, parsing, and color-coding transcripts, and allows users to download the generated summaries, improving overall efficiency and accessibility.
+### Mini-SHRDLU (C++)
+Solver for a simplified SHRDLU blocks world using A* search.
 
-### Book Catalog — Web app  
-**Date:** Jan 2021 - May 2021  
-
-- Categorised books by genres, favourites, and comments.
-- Built backend using NodeJS, Express, JWT, and MongoDB.
-- Frontend development using Bootstrap, JS, and JQuery.
-- Deployed on Heroku and used Electron for cross-platform apps.
-
-### Mini-SHRDLU — C++  
-**Date:** Feb 2023 - Jun 2023  
-
-- Developed a solver for a simplified version of the SHRDLU board game.
-- Implemented various algorithms, including A* search, to achieve specified goals on a grid.
-- Utilised C++ for performance and support for data structures like vectors, priority queues, and unordered sets.
+### Book Catalog (2021)
+My first deployed app: Node, Express, JWT and MongoDB on Heroku, with an Electron desktop build.
 
 ---
 
 ## Skills
 
-- **Technical:** C/C++, Python, JavaScript/TypeScript, Java, PHP, SQL, AWS  
-- **Web Frameworks/Libraries:** React.js, Next.js, Node.js, Express.js, JQuery, TailwindCSS  
-- **AI/ML:** TensorFlow, Scikit-learn, OpenAI, Gemini, Langchain, LangGraph, Langsmith
-- **Database:** MongoDB, SQLite, PostgreSQL, Prisma
-- **Interpersonal:** Team-working, communication, problem-solving, creative  
-- **Languages:** English, Vietnamese  
+- **Languages:** TypeScript/JavaScript, Python, Rust, C/C++, Java, SQL
+- **AI/LLM:** Vercel AI SDK, pydantic-ai, LangChain/LangGraph, RAG and vector search (pgvector, embeddings), structured document extraction, tool-calling agents, LLM-as-judge evaluation, Claude, Gemini, OpenAI, PyTorch
+- **Backend:** Django, DRF, Celery, FastAPI, Convex, Hono, Bun, Node.js, Rust (Axum, Tokio), REST/OpenAPI, EDI/EDIFACT and XML messaging
+- **Frontend:** React, Next.js 16, Vite, TanStack Router/Query/Table/Virtual, Tailwind CSS v4, shadcn/ui, AG Grid, Expo / React Native, Electron
+- **Data & infra:** PostgreSQL, pgvector, Redis, Prisma, Drizzle, Supabase, AWS (S3, SQS, RDS, CloudFront, KMS, Textract, CDK), Docker, Vercel, Railway, Cloudflare, GitHub Actions, OpenTelemetry, Vitest, Playwright
+- **Integrations:** Slack (Bolt), Clerk, Postmark/Resend, PostHog
+- **Domain:** Freight forwarding, customs brokerage, tariff classification, transport management, risk quantification (Open FAIR)
+- **Working style:** Project management, stakeholder management, team leadership, mentoring
 
 ---
+
+## Community
+
+- Advisor at UAVS Hackathon 2026 (Vietnamese Students in NSW), helping teams sharpen their ideas and pitches.
+- Plasma donor with Australian Red Cross Lifeblood.
 
 ## Certifications
 
-- AWS Academy Graduate - AWS Academy Cloud Architecting  
-- AWS Academy Graduate - AWS Academy Cloud Foundations  
-- JavaScript Algorithms and Data Structures  
-- Artificial Intelligence Foundations: Neural Networks  
-
----
-
-**Additional Technologies:**  
-LLM, Linux, Ubuntu, XML, ReactJS, AngularJS, VueJS, C#, NextJS, Electron, ReactNative, EC2, Lambda, RAG, MongoDB  
-**Methodologies:** Agile, Leadership, Sprint  
-**Soft Skills:** Responsibility Analysis, Active Learning, Collaboration
-
-## Small Projects
-
-### Sudoku Solver 
-Allows users to input a Sudoku puzzle either manually or by uploading an image or taking an image, and the program will solve it.
+- AWS Academy Graduate — Cloud Architecting; Cloud Foundations
+- JavaScript Algorithms and Data Structures
+- Artificial Intelligence Foundations: Neural Networks

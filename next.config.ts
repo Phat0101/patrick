@@ -1,10 +1,13 @@
-module.exports = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   images: {
-    localPatterns: [
-      {
-        pathname: '/public/**',
-        search: '',
-      },
-    ],
+    formats: ["image/avif", "image/webp"],
   },
-}
+  // The chat route reads the résumé from disk at request time.
+  outputFileTracingIncludes: {
+    "/api/chat": ["./public/Patrick_Resume.md"],
+  },
+};
+
+export default nextConfig;

@@ -1,178 +1,154 @@
-import { StaticImageData } from "next/image";
-import gpt_for_health_img_url from "../../public/gpt_for_health.png"
-import gpt_for_health_login_img_url from "../../public/gpt_for_health_login.png"
-import creator_img_url from "../../public/creator.png"
-import cretor_tcs_img_url from "../../public/creator_tcs.jpg"
-import roster_img_url from "../../public/roster.png"
-import zoom_summariser_img_url from "../../public/zoom_summariser.png"
-import zoom_summariser_result_img_url from "../../public/zoom_summariser_result.png"
-import pass_img_url from "../../public/pass.png"
-import pass_promo_img_url from "../../public/pass_promo.png"
-import shdrlu_1_img_url from "../../public/shdrlu_1.png"
-import shdrlu_2_img_url from "../../public/shdrlu_2.png"
-import Qrisk_Logo from "../../public/Qrisk_Logo.png"
-import Clear_Logo from "../../public/clearai.avif"
-// Define types
+import type { StaticImageData } from "next/image";
+import gptForHealth from "../../public/gpt_for_health.png";
+import zoomSummariser from "../../public/zoom_summariser_result.png";
+import navifi from "../../public/creator_tcs.jpg";
+
+export const profile = {
+  name: "Patrick Nguyen",
+  role: "Software Engineer at Clear.ai",
+  location: "Sydney, Australia",
+  email: "Patrick.Nguyen01@outlook.com",
+  github: "https://github.com/Phat0101",
+  linkedin: "https://www.linkedin.com/in/patrick-nguyen-44766a188/",
+  youtube: "https://www.youtube.com/@patricknguyen-0101",
+  resume: "/Patrick_Resume.pdf",
+};
+
 export interface Experience {
-  title: string;
   company: string;
+  role: string;
   date: string;
-  description: string[];
-  icon: string; // Change icon type to string
+  location: string;
+  highlights: string[];
   skills: string[];
-  images: string[] | StaticImageData[] | null;
-  videos: string[] | null;
-  link?: string; // Add link variable
+  link?: string;
 }
 
 export interface Project {
   title: string;
-  date: string;
-  description: string[];
-  icon: string; // Change icon type to string
-  skills: string[];
-  images: string[] | StaticImageData[] | null;
-  videos: string[] | null;
-  link?: string; // Add link variable
+  year: string;
+  summary: string;
+  stack: string[];
+  link?: string;
+  image?: StaticImageData;
+  label?: string;
 }
 
-export type Skill = string;
-
-// Export variables
 export const experiences: Experience[] = [
   {
-    title: "Software Engineer",
-    company: "Clear.ai - Sydney, NSW",
-    date: "May 2025 - Present",
-    description: [
-      "Clear.ai",
-      "Engineering software and AI solutions for Customs Brokerage."    
+    company: "Clear.ai",
+    role: "Software Engineer",
+    date: "Nov 2025 – Present",
+    location: "Sydney · On-site",
+    highlights: [
+      "Full-stack engineer on the customs and freight-forwarding platform: about 1,700 commits across the React + TanStack + Convex front end and the Django + Celery back end, covering declaration workflows, automation rules, shipment tracking, CRM and billing.",
+      "Built TariffChat™, an AI tariff classification assistant (Next.js, AI SDK, pgvector search, web research tools) now used by 300+ customs brokers, with 35,000+ classifications across APAC.",
+      "Core contributor to the transport management system for Qube: Convex realtime back end, an Expo driver app and a React fleet portal, including the customs integration module.",
+      "Built LLM classification services for AU, NZ, UK, US, CA and SG tariffs with FastAPI and pydantic-ai, grounding answers in source text to cut unsupported citations.",
+      "Run an internal AI engineering agent that starts Claude Code and Codex sessions from Slack, with automated PR review and a live session viewer.",
     ],
-    icon: "Container", // Use string for icon
-    skills: ["AI agents", "LLMs integration", "Customs Brokerage", "Django", "FastAPI", "Next.js"],
-    images: [Clear_Logo],
-    videos: null,
+    skills: ["TanStack", "Convex", "Django", "AI SDK", "pydantic-ai", "AWS CDK", "Rust"],
+    link: "https://clear.ai",
   },
   {
-    title: "Junior Full-stack Developer",
-    company: "Qrisks - CISO, QLD",
-    date: "Feb 2025 - May 2025",
-    description: [
-      "Maintaining and developing innovative risk quantification solutions using Open FAIR.",
-      "Collaborating with cross-functional teams to deliver high-quality software products that meet client requirements."
+    company: "Clear.ai",
+    role: "Junior Software Engineer",
+    date: "May 2025 – Oct 2025",
+    location: "Sydney · On-site",
+    highlights: [
+      "Shipped early AI prototypes for customs brokerage: a broker agent, AI document extraction for invoices and customs data, and a customs entry audit tool.",
     ],
-    icon: "Shield", // Use string for icon
-    skills: ["FastAPI", "Next.js", "AWS", "CI/CD", "Risk Assessment", "Team Collaboration"],
-    images: [Qrisk_Logo],
-    videos: null,
+    skills: ["Next.js", "FastAPI", "Gemini", "Prisma", "Convex"],
   },
   {
-    title: "Software Engineer, Research",
-    company: "Western Sydney University, School of Medicine - GPT for Health",
-    date: "July 2024 - Dec 2024",
-    description: [
-      "Developed a scalable, AI-powered system to simulate realistic family scenarios for medical students.",
-      "Implemented a user-friendly chat interface for students to interact with simulated patients and track their progress.",
-      "Researching students' responses to LLMs and comparing those with real interactions."
-    ],
-    icon: "Beaker", // Use string for icon
-    skills: ["Next.js", "React.js", "TypeScript", "SQlite", "AI", "Project Management"],
-    images: [gpt_for_health_login_img_url, gpt_for_health_img_url],
-    videos: ["https://youtu.be/PidQHe4E6XE?si=8mGbW8NimhPrUkUJ"],
-    // link: "https://example.com/gpt-for-health" // Example link
+    company: "QRisk",
+    role: "Junior Full-stack Developer",
+    date: "Feb 2025 – May 2025",
+    location: "Queensland · Remote contract",
+    highlights: ["Maintained and extended cyber-risk quantification software based on Open FAIR."],
+    skills: ["Next.js", "FastAPI", "Prisma", "AWS"],
   },
   {
-    title: "Software Engineer Intern, Mentor",
-    company: "Tata Consultancy Services x Creators Club",
-    date: "March 2024 - Feb 2025",
-    description: [
-      "Working on NaviFi | AI-powered equity research platform in partnership with Tata Consultancy Services to deliver customised AI functionalities using different models and RAG techniques.",
-      "Developed SkillPies GitHub course, and mentoring new members on web-related technologies.",
-      "Currently serving as a full-stack web developer and team leader for club projects."
+    company: "Tata Consultancy Services × Creators Club",
+    role: "Full-stack Developer Intern",
+    date: "Oct 2024 – Feb 2025",
+    location: "North Sydney · Hybrid",
+    highlights: [
+      "Co-founded NaviFi, an AI investment research and community platform, built with TCS for their Shark Tank competition.",
+      "Mentored club members and wrote the SkillPies GitHub course.",
     ],
-    icon: "Code", // Use string for icon
-    skills: ["Chrome Extension", "AI", "Agentic RAG", "Full-stack", "Mentoring"],
-    images: [creator_img_url, cretor_tcs_img_url,],
-    videos: null,
+    skills: ["Agentic RAG", "Prisma", "Pitching"],
   },
   {
-    title: "Full-stack Developer Intern",
-    company: "Western Sydney University - SSTaRs Staff Roster, Zoom Summariser (dev..)",
-    date: "March 2024 - Nov 2024",
-    description: [
-      "Migrated the existing file-based process to an interactive web application that involves shift planning and presentation using React.js, Node.js, and MongoDB.",
-      "Dynamically account for staff preferences: sick leaves, shift preferences; public and university holidays, etc.",
-      "Allow users to add their shifts to different calendar apps, and export to csv and PDF formats."
-    ],
-    icon: "Briefcase", // Use string for icon
-    skills: ["React.js", "Node.js", "MongoDB", "Web Development"],
-    images: [roster_img_url, zoom_summariser_img_url],
-    videos: null,
-    link: "https://class-connect-wrv3.vercel.app/" // Example link
+    company: "Western Sydney University",
+    role: "Software Engineer, GPT for Health",
+    date: "Jul 2024 – Dec 2024",
+    location: "School of Medicine · Research",
+    highlights: ["Built an LLM system that simulates family scenarios for medical students, and studied how students respond to it."],
+    skills: ["Next.js", "TypeScript", "SQLite", "AWS"],
   },
   {
-    title: "Maths Facilitator",
-    company: "Western Sydney University - Peer Assisted Study Sessions",
-    date: "Feb 2023 - June 2023",
-    description: [
-      "Helped peers in understanding statistics using RStudio and Python.",
-      "Hosted weekly in-class and remote sessions, analysed students' results and prepared tailored materials.",
-      "On average 30% improvement compared to previous semesters and 75% achieved Distinction and above."
-    ],
-    icon: "BookOpen", // Use string for icon
-    skills: ["RStudio", "Python", "Statistics", "Teaching"],
-    images: [pass_promo_img_url, pass_img_url],
-    videos: [],
-  }
-]
+    company: "Western Sydney University",
+    role: "Full-stack Developer Intern",
+    date: "Mar 2024 – Nov 2024",
+    location: "Kingswood · Hybrid",
+    highlights: ["Replaced a file-based staff roster with a web app handling preferences, leave, holidays and calendar export."],
+    skills: ["React", "Node.js", "MongoDB"],
+  },
+];
 
 export const projects: Project[] = [
   {
+    title: "TariffChat™",
+    year: "2025",
+    summary: "Free AI assistant for Australian customs brokers: tariff classification, concession orders and duty rates in one searchable chat.",
+    stack: ["Next.js", "AI SDK", "pgvector", "Postgres"],
+    label: "Clear.ai · production",
+  },
+  {
+    title: "Transport management for Qube",
+    year: "2025–26",
+    summary: "Realtime TMS with a driver tablet app, a fleet portal and customs integration for a large Australian logistics operator.",
+    stack: ["Convex", "Expo", "React", "TanStack Router"],
+    label: "Clear.ai · production",
+  },
+  {
+    title: "Claude Code Diff Review",
+    year: "2026",
+    summary: "VS Code and Cursor extension that lets Claude Code edit at full speed, then shows every change as a diff to keep or revert in one batch.",
+    stack: ["Claude Code hooks", "Bun", "VS Code API"],
+    label: "Open source",
+    link: "https://github.com/Phat0101/claude-diff-review",
+  },
+  {
+    title: "GPT for Health",
+    year: "2024",
+    summary: "Simulated patients and families for medical students in WSU's Health Across the Lifespan workshops.",
+    stack: ["Next.js", "LLMs", "SQLite", "AWS"],
+    image: gptForHealth,
+  },
+  {
     title: "Zoom Summariser",
-    date: "July 2024 - Present",
-    description: [
-      `Allows users to add, delete, and assign specific timeframes to multiple speakers, ensuring accurate and organised transcript chunking for better summarisation.`,
-      "Automates the summarisation process using LLM with customisable system prompts, saving users time and providing tailored summaries based on specific needs.",
-      "Provides a user-friendly interface for uploading, parsing, and color-coding transcripts, and allows users to download the generated summaries, improving overall efficiency and accessibility.",
-    ],
-    icon: "SiZoom", // Use string for icon
-    skills: ["Next.js", "React.js", "TypeScript", "GenAI", "TailwindCSS"],
-    images: [zoom_summariser_img_url, zoom_summariser_result_img_url],
-    videos: ["https://youtu.be/hewvlvwLK3s"],
-    link: "https://zoom-summariser.vercel.app/"
+    year: "2024",
+    summary: "Splits a multi-speaker transcript by speaker and timeframe, then summarises each part with custom LLM prompts.",
+    stack: ["Next.js", "Gemini", "TypeScript"],
+    link: "https://zoom-summariser.vercel.app/",
+    image: zoomSummariser,
   },
   {
-    title: "Mini-SHRDLU",
-    date: "Feb 2023 - Jun 2023",
-    description: [
-      "Developed a solver for a simplified version of the SHRDLU board game, which involves moving blocks to achieve specified goals on a grid.",
-      "Utilised C++ for its performance and standard library support for data structures like vectors, priority queues, and unordered sets."
-    ],
-    icon: "Cpu", // Use string for icon
-    skills: ["C++", "Algorithms", "Data Structures"],
-    images: [shdrlu_1_img_url, shdrlu_2_img_url],
-    videos: null,
-    link: "https://github.com/Phat0101/DSA-Project-Mini-SHDRLU"
+    title: "NaviFi",
+    year: "2024",
+    summary: "AI investment research and community platform, co-founded with Tata Consultancy Services mentorship.",
+    stack: ["Agentic RAG", "Next.js", "Chrome extension"],
+    image: navifi,
   },
-  {
-    title: "Book Catalog",
-    date: "Jan 2021 - May 2021",
-    description: [
-      "Categorising books based on genres, favourites, comments, etc.",
-      "Used NodeJS, Express and JWT for the Backend, and MongoDB for the database.",
-      "Used Bootstrap, JS and JQuery for Frontend.",
-      "Heroku for deployment, Electron for cross-platform apps."
-    ],
-    icon: "BookMarked", // Use string for icon
-    skills: ["NodeJS", "Express", "JWT", "MongoDB", "Bootstrap", "JQuery", "Heroku", "Electron"],
-    images: [],
-    videos: ["https://youtu.be/xgnlAQizc9U?si=t78PkNsKHJ3ibEG_"],
-    link: "https://youtu.be/xgnlAQizc9U?si=t78PkNsKHJ3ibEG_"
-  }
-]
+];
 
-export const skills: Skill[] = [
-  "C", "C++", "Python", "JavaScript", "TypeScript", "Java", "PHP", "SQL", "Docker", "FastAPI",
-  "React.js", "Next.js", "Node.js", "Express.js", "TailwindCSS", "AWS",
-  "Team-working", "Communication", "Problem-solving", "Langchain", "Langgraph", "OpenAI", "ML", "LLMs", "TensorFlow", "Hugging Face", "GCP", "Serverless", "CI/CD", "Risk Assessment", "Open FAIR"
-]
+export const skillGroups: { label: string; items: string[] }[] = [
+  { label: "AI & LLMs", items: ["AI SDK", "pydantic-ai", "LangGraph", "RAG & pgvector", "Document extraction", "Claude", "Gemini", "OpenAI"] },
+  { label: "Backend", items: ["Python", "Django", "Celery", "FastAPI", "Convex", "Hono", "Bun", "Rust (Axum)"] },
+  { label: "Frontend", items: ["TypeScript", "React", "Next.js", "TanStack", "Tailwind CSS", "shadcn/ui", "Expo"] },
+  { label: "Data & infra", items: ["PostgreSQL", "Redis", "Prisma", "Drizzle", "AWS CDK", "Docker", "Vercel", "GitHub Actions"] },
+];
+
+export const skills = skillGroups.flatMap((g) => g.items);

@@ -276,7 +276,7 @@ export default function SudokuSolverComponent(): React.ReactElement<any> {
 
             {/* Right Column - Grid */}
             <div className="lg:w-1/2 flex flex-col">
-              <div className="grid grid-cols-9 gap-[1px] bg-gray-400 border-2 border-gray-900 mb-6 aspect-square">
+              <div className="grid grid-cols-9 gap-px bg-gray-400 border-2 border-gray-900 mb-6 aspect-square">
                 {grid.map((row, rowIndex) =>
                   row.map((cell, colIndex) => (
                     <div key={`${rowIndex}-${colIndex}`} className="relative w-full pb-[100%]">
@@ -290,7 +290,7 @@ export default function SudokuSolverComponent(): React.ReactElement<any> {
                         onChange={(e) => handleCellChange(rowIndex, colIndex, e.target.value)}
                         className={`absolute inset-0 w-full h-full text-center text-base sm:text-lg font-medium 
                           border-[0.5px] border-gray-300
-                          focus:outline-none focus:ring-2 focus:ring-blue-500 
+                          focus:outline-hidden focus:ring-2 focus:ring-blue-500 
                           ${
                             solvedGrid.length > 0 
                               ? cell === null 
@@ -300,8 +300,8 @@ export default function SudokuSolverComponent(): React.ReactElement<any> {
                                 ? 'bg-red-200'
                               : 'bg-white'
                           }
-                          ${(rowIndex + 1) % 3 === 0 && rowIndex < 8 ? 'border-b-[2px] border-b-gray-900' : ''}
-                          ${(colIndex + 1) % 3 === 0 && colIndex < 8 ? 'border-r-[2px] border-r-gray-900' : ''}
+                          ${(rowIndex + 1) % 3 === 0 && rowIndex < 8 ? 'border-b-2 border-b-gray-900' : ''}
+                          ${(colIndex + 1) % 3 === 0 && colIndex < 8 ? 'border-r-2 border-r-gray-900' : ''}
                           `}
                         readOnly={isSolving || solvedGrid.length > 0}
                         style={{

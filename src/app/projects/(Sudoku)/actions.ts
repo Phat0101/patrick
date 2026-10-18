@@ -1,7 +1,7 @@
 'use server'
 
-import { generateObject } from 'ai';
-import { openai } from '@ai-sdk/openai';
+import { generateText, Output } from 'ai';
+import { google } from '@ai-sdk/google';
 import { z } from 'zod';
 // import sharp from 'sharp';
 
@@ -34,10 +34,9 @@ export async function parseImageToSudoku(imageData: string): Promise<number[][]>
     // Reduce image resolution before processing
     const reducedImage = imageData; // await reduceImageResolution(imageData, 0.5);
 
-    const { object } = await generateObject({
-      model: openai('gpt-4o'),
-      schema: sudokuSchema,
-      maxTokens: 512,
+    const { output } = await generateText({
+      model: google('gemini-3.8-flash'),
+      output: Output.object({ schema: sudokuSchema }),
       messages: [
         {
           role: 'system',
@@ -59,7 +58,7 @@ export async function parseImageToSudoku(imageData: string): Promise<number[][]>
       ],
     });
 
-    return object.grid;
+    return output.grid;
   } catch (error) {
     console.error('Error parsing Sudoku image:', error);
     throw new Error('Failed to process Sudoku image');

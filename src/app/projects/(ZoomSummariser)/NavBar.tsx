@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from "@/components/ui/button"
 import { FaMoon, FaSun, FaFont } from "react-icons/fa"
-import { motion } from "framer-motion"
+import { motion } from 'motion/react'
 
 interface NavBarProps {
   currentPage: "main" | "summary";
@@ -20,7 +20,7 @@ export default function NavBar({
 }: NavBarProps) {
   return (
     <motion.nav
-      className="flex justify-between items-center p-4 bg-gradient-to-r from-purple-500 to-indigo-600 text-white"
+      className="flex justify-between items-center p-4 bg-linear-to-r from-purple-500 to-indigo-600 text-white"
       initial={{ opacity: 0, y: -50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}

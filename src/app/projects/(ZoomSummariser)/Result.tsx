@@ -4,7 +4,7 @@ import { FaDownload } from "react-icons/fa";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { motion } from "framer-motion";
+import { motion } from 'motion/react';
 
 interface Summary {
   speaker: string;

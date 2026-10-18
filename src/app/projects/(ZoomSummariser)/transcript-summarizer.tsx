@@ -11,7 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { FaPlus, FaUpload, FaTrash, FaSpinner } from "react-icons/fa";
 import { parseTranscript } from "./parse";
 import Result from "./Result";
-import { motion } from "framer-motion";
+import { motion } from 'motion/react';
 
 interface Speaker {
   name: string;
@@ -273,8 +273,8 @@ export default function TranscriptSummarizerComponent({
   return (
       <div className={`bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 h-[calc(100vh-75px)] transition-colors duration-300`}>
         {currentPage === "main" ? (
-          <ResizablePanelGroup direction="horizontal" className="h-full">
-            <ResizablePanel defaultSize={50}>
+          <ResizablePanelGroup orientation="horizontal" className="h-full">
+            <ResizablePanel defaultSize="50%">
               <motion.div
                 className="h-full p-4 flex flex-col"
                 initial={{ opacity: 0 }}
@@ -329,7 +329,7 @@ export default function TranscriptSummarizerComponent({
               </motion.div>
             </ResizablePanel>
             <ResizableHandle />
-            <ResizablePanel defaultSize={25}>
+            <ResizablePanel defaultSize="25%">
               <motion.div
                 className="h-full p-4 flex flex-col"
                 initial={{ opacity: 0, x: 50 }}
@@ -383,7 +383,7 @@ export default function TranscriptSummarizerComponent({
                           className="w-4 h-4 rounded-full mr-4"
                           style={{ backgroundColor: speaker.color }}
                         ></div>
-                        <div className="flex-grow overflow-auto">
+                        <div className="grow overflow-auto">
                           <h3 className="text-base font-medium">{speaker.name}</h3>
                           <p className="text-sm text-gray-500 dark:text-gray-400">{speaker.notes}</p>
                         </div>
@@ -397,7 +397,7 @@ export default function TranscriptSummarizerComponent({
               </motion.div>
             </ResizablePanel>
             <ResizableHandle />
-            <ResizablePanel defaultSize={25}>
+            <ResizablePanel defaultSize="25%">
               <motion.div
                 className="h-full p-4 flex flex-col"
                 initial={{ opacity: 0, x: 50 }}
@@ -459,7 +459,7 @@ export default function TranscriptSummarizerComponent({
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                     >
-                      <div className="flex-grow overflow-auto">
+                      <div className="grow overflow-auto">
                         <h3 className="text-base font-medium">Timeframe {index + 1}</h3>
                         <p className="text-sm text-gray-500 dark:text-gray-400">
                           Start: {timeframe.start}, End: {timeframe.end}, Speaker: {timeframe.speaker}

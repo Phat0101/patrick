@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, type JSX } from 'react';
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import { Button } from '@/components/ui/button'
 import { ArrowLeftToLine, ArrowRightToLine, Menu, Grid3x3, Undo2 } from 'lucide-react'
 import { SiZoom } from "react-icons/si"
@@ -83,7 +83,7 @@ const Projects = () => {
   }
 
   return (
-    <div className={`h-full ${darkMode ? 'dark' : ''} bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-blue-900`}>
+    <div className={`h-full ${darkMode ? 'dark' : ''} bg-linear-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-blue-900`}>
       <div className="flex h-screen">
         {/* Mobile Menu Button */}
         {isMobile && (
@@ -104,7 +104,7 @@ const Projects = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-black/50 backdrop-blur-xs z-40"
             />
           )}
         </AnimatePresence>
@@ -233,7 +233,7 @@ const Projects = () => {
             flex-1 overflow-y-auto
             transition-all duration-300
             ${!isOpen && !isMobile ? 'ml-2 mr-2' : 'ml-1 mr-1'}
-            ${isMobile && isOpen ? 'blur-sm' : ''}
+            ${isMobile && isOpen ? 'blur-xs' : ''}
           `}
         >
           {renderSelectedProject()}
