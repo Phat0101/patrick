@@ -1,6 +1,6 @@
 # Patrick Nguyen
 
-**Role:** Software Engineer @ Clear.ai
+**Role:** Software Engineer & Technical Product Owner @ Clear.ai
 **Location:** Sydney, NSW, Australia
 **LinkedIn:** [linkedin.com/in/patrick-nguyen-44766a188](https://www.linkedin.com/in/patrick-nguyen-44766a188/)
 **GitHub:** [Phat0101](https://github.com/Phat0101)
@@ -12,7 +12,7 @@
 
 ## About
 
-I'm an early software engineer at Clear.ai, an AI-native software company for freight forwarders and customs brokers in Sydney. I build full-stack logistics products across freight forwarding, customs and transport management (TMS). A recent highlight is TariffChat™, a tariff classification assistant that has served 35,000+ classifications for 400+ brokers at 100+ organisations across APAC.
+I'm an early software engineer and technical product owner at Clear.ai, an AI-native software company for freight forwarders and customs brokers in Sydney. I build full-stack logistics products across freight forwarding, customs and transport management (TMS). A recent highlight is TariffChat™, a tariff classification assistant that has served 35,000+ classifications for 400+ brokers at 100+ organisations across APAC.
 
 These days tools like Claude Code handle much of the implementation, so more of my time goes into understanding what customers are struggling with and how a solution should fit together. I still believe in holding the whole problem in my head first — a habit from writing algorithms by hand on my school's competitive programming team in Vietnam.
 
@@ -25,11 +25,13 @@ I moved to Australia from Vietnam in 2018 for high school, finished with an ATAR
 ### Clear.ai — Sydney, NSW (On-site, full-time)
 AI-native software for freight forwarders and customs brokers.
 
-**Software Engineer** · Nov 2025 – Present
-- Build full-stack features across Clear.ai's freight forwarding, customs and transport management products.
-- Work on TariffChat™, an AI tariff classification assistant for licensed customs brokers: 35,000+ classifications, 400+ brokers and 100+ organisations across APAC. It covers the Australian Working Tariff, including Schedule 3 classifications, Tariff Concession Orders, Schedule 4 concessional rates and by-laws.
-- Build LLM-powered classification and document workflows that help brokers work faster and more accurately.
-- Take on project management and technical leadership, working directly with customers on what to build.
+**Software Engineer & Technical Product Owner** · Nov 2025 – Present
+- Technical product owner for my team: turn customer problems into scoped work, set priorities and see features through to release.
+- Build across the back end, front end and full stack of the main Clear.ai app (app.clear.ai), with a focus on the freight forwarding platform.
+- Built shipment tracking and third-party integrations, including 1-Stop and Australian Border Force (ABF) connections.
+- Work on tariff classification services and TariffChat™, an AI tariff classification assistant for licensed customs brokers: 35,000+ classifications, 400+ brokers and 100+ organisations across APAC. It covers the Australian Working Tariff, including Schedule 3 classifications, Tariff Concession Orders, Schedule 4 concessional rates and by-laws.
+- Set up and manage the AWS infrastructure for internal classification and tariff data platforms.
+- Mentor junior engineers and interns.
 
 **Junior Software Engineer** · May 2025 – Oct 2025
 - Engineered software and AI solutions for customs brokerage.

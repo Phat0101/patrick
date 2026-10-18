@@ -38,7 +38,8 @@ export default function Page() {
               className="group flex w-fit items-center gap-2 rounded-full border bg-card py-1 pr-3 pl-1 text-[13px] text-text-secondary transition-colors hover:text-foreground"
             >
               <span className="rounded-full bg-cobalt-soft px-2 py-0.5 font-mono text-[10.5px] tracking-wider text-cobalt uppercase">Now</span>
-              Software Engineer at Clear.ai
+              <span className="sm:hidden">Engineer & Product Owner, Clear.ai</span>
+              <span className="hidden sm:inline">Engineer & Technical Product Owner at Clear.ai</span>
               <ArrowUpRightIcon className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Link>
 
@@ -48,7 +49,7 @@ export default function Page() {
             </h1>
 
             <p className="max-w-[54ch] text-[17px] leading-relaxed text-text-secondary">
-              I&apos;m Patrick, an early engineer at Clear.ai in Sydney. I ship full-stack logistics products and the AI agents
+              I&apos;m Patrick, an early engineer and technical product owner at Clear.ai in Sydney. I ship full-stack logistics products and the AI agents
               inside them. Lately: TariffChat™, used by 400+ customs brokers at 100+ organisations across APAC.
             </p>
 

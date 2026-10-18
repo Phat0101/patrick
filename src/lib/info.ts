@@ -5,7 +5,7 @@ import navifi from "../../public/creator_tcs.jpg";
 
 export const profile = {
   name: "Patrick Nguyen",
-  role: "Software Engineer at Clear.ai",
+  role: "Software Engineer & Technical Product Owner at Clear.ai",
   location: "Sydney, Australia",
   email: "Patrick.Nguyen01@outlook.com",
   github: "https://github.com/Phat0101",
@@ -37,16 +37,18 @@ export interface Project {
 export const experiences: Experience[] = [
   {
     company: "Clear.ai",
-    role: "Software Engineer",
+    role: "Software Engineer & Technical Product Owner",
     date: "Nov 2025 – Present",
     location: "Sydney · On-site",
     highlights: [
-      "Build full-stack features across Clear.ai's freight forwarding, customs and transport management products.",
-      "Work on TariffChat™, an AI tariff classification assistant used by 400+ customs brokers at 100+ organisations across APAC, with 35,000+ classifications.",
-      "Build LLM-powered classification and document workflows that help brokers work faster and more accurately.",
-      "Lead features from customer conversations through design and delivery.",
+      "Technical product owner for my team: turn customer problems into scoped work, set priorities and see features through to release.",
+      "Build across the back end, front end and full stack of the main Clear.ai app (app.clear.ai), with a focus on the freight forwarding platform.",
+      "Built shipment tracking and third-party integrations, including 1-Stop and Australian Border Force (ABF) connections.",
+      "Work on tariff classification services and TariffChat™, an AI assistant used by 400+ customs brokers at 100+ organisations across APAC, with 35,000+ classifications.",
+      "Set up and manage the AWS infrastructure for internal classification and tariff data platforms.",
+      "Mentor junior engineers and interns.",
     ],
-    skills: ["Full-stack", "AI agents", "LLMs", "Project management", "Leadership"],
+    skills: ["Technical product ownership", "Full-stack", "AI agents", "Integrations", "AWS", "Mentoring"],
     link: "https://clear.ai",
   },
   {
